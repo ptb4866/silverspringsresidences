@@ -66,13 +66,13 @@ export default function Header() {
   return (
     <>
       <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="container mx-auto px-8">
+          <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mr-2 sm:mr-3">
-                <div className="w-9 h-9 sm:w-12 sm:h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm sm:text-lg">
+            <Link href="/" className="flex flex-col items-center py-4">
+              <div className="w-14 h-14 sm:w-18 sm:h-18 bg-green-100 rounded-full flex items-center justify-center mr-4 sm:mr-5">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-green-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-base sm:text-xl">
                     SS
                   </span>
                 </div>
