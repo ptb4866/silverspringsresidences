@@ -7,7 +7,7 @@ export default function LuxuryLiving() {
             Luxury Senior Living
           </h2>
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-600 mb-12 leading-tight">
-            in Silver City, Texas
+            in Menifee, California
           </h3>
         </div>
 
