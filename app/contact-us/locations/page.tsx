@@ -1,13 +1,6 @@
-import type { Metadata } from "next"
-import LocationsHero from "@/components/contact/LocationsHero"
-import LocationsList from "@/components/contact/LocationsList"
-import ContactSection from "@/components/shared/ContactSection"
-
-export const metadata: Metadata = {
-  title: "Our Locations | Silver Springs Residency",
-  description:
-    "Find Silver Springs Residency locations near you. We have multiple communities offering exceptional senior living services.",
-}
+import LocationsHero from "@/components/contact/LocationsHero";
+import LocationsList from "@/components/contact/LocationsList";
+import ContactSection from "@/components/shared/ContactSection";
 
 export default function LocationsPage() {
   return (
@@ -16,5 +9,5 @@ export default function LocationsPage() {
       <LocationsList />
       <ContactSection />
     </main>
-  )
+  );
 }
