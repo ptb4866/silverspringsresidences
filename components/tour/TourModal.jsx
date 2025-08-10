@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTourRequest } from "@/hooks/use-tour-request";
+import { TOUR_LOCATIONS, TOUR_STATUS } from "@/constants/tour";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import {
@@ -213,26 +215,37 @@ export default function TourModal() {
     }
   };
 
+  const tourRequest = useTourRequest();
+
   async function onSubmit(values) {
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      const confirmationData = {
-        ...values,
-        confirmationNumber: `SSR-${Date.now()}`,
-        tourDate: format(values.date, "EEEE, MMMM do, yyyy"),
-        tourTime: timeSlots.find((slot) => slot.value === values.timeSlot)
-          ?.label,
-      };
+      const result = await tourRequest.mutateAsync({
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        phone: values.phone,
+        relationship: values.relationship,
+        location: values.location,
+        date: values.date,
+        timeSlot: values.timeSlot,
+        groupSize: values.groupSize,
+        interests: values.interests,
+        specialRequests: values.specialRequests,
+        marketingConsent: values.marketingConsent,
+      });
+
       toast({
         title: "Tour Scheduled Successfully!",
-        description: `Confirmation #${confirmationData.confirmationNumber}. Check your email for details.`,
+        description: `Your tour has been scheduled! Confirmation #${result.confirmation_number}. We'll send you an email with the details shortly.`,
       });
       closeTourModal();
     } catch (error) {
+      console.error("Tour scheduling error:", error);
       toast({
         title: "Error",
         description:
+          error.message ||
           "There was a problem scheduling your tour. Please try again.",
         variant: "destructive",
       });
