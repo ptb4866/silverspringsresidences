@@ -390,7 +390,11 @@ export default function TourModal() {
 
         <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-6"
+              data-gramm="false"
+            >
               {step === 1 && (
                 <div className="space-y-6">
                   <div>
@@ -418,7 +422,11 @@ export default function TourModal() {
                             First Name *
                           </FormLabel>
                           <FormControl>
-                            <Input placeholder="John" {...field} />
+                            <Input
+                              placeholder="John"
+                              {...field}
+                              data-gramm="false"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -433,7 +441,11 @@ export default function TourModal() {
                             Last Name *
                           </FormLabel>
                           <FormControl>
-                            <Input placeholder="Doe" {...field} />
+                            <Input
+                              placeholder="Doe"
+                              {...field}
+                              data-gramm="false"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -450,6 +462,7 @@ export default function TourModal() {
                           <Input
                             type="email"
                             placeholder="john@example.com"
+                            data-gramm="false"
                             {...field}
                           />
                         </FormControl>
@@ -464,7 +477,11 @@ export default function TourModal() {
                       <FormItem>
                         <FormLabel>Phone Number *</FormLabel>
                         <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} />
+                          <Input
+                            placeholder="(555) 123-4567"
+                            {...field}
+                            data-gramm="false"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -729,6 +746,7 @@ export default function TourModal() {
                         <FormLabel>Special Requests or Questions</FormLabel>
                         <FormControl>
                           <Textarea
+                            data-gramm="false"
                             placeholder="Any specific questions, accessibility needs, or special requests for your tour?"
                             className="min-h-[100px]"
                             {...field}
