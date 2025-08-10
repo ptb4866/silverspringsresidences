@@ -29,6 +29,32 @@ export function useTourRequest() {
         console.error("Supabase Error:", error);
         throw new Error(`Failed to schedule tour: ${error.message}`);
       }
+
+      // Send email notification
+      try {
+        const { data: emailData, error: emailError } =
+          await supabase.functions.invoke("send-tour-notification", {
+            body: { tourData: data },
+          });
+
+        if (emailError) {
+          console.error("Email notification error:", emailError);
+          throw new Error(
+            "Failed to send email notification. Please try again."
+          );
+        }
+
+        if (!emailData?.success) {
+          console.error("Email sending failed:", emailData);
+          throw new Error(
+            "Failed to send email notification. Please try again."
+          );
+        }
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        throw new Error("Failed to send email notification. Please try again.");
+      }
+
       return data;
     },
   });
