@@ -9,9 +9,14 @@ export default function ScheduleATourPage() {
   const router = useRouter();
 
   useEffect(() => {
-    openTourModal();
-    router.replace("/");
-  }, [openTourModal, router]);
+    // Only open the modal if we haven't already redirected
+    const timeoutId = setTimeout(() => {
+      openTourModal();
+      router.replace("/");
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return null;
 }
