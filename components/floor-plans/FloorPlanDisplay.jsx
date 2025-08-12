@@ -15,12 +15,12 @@ export default function FloorPlanDisplay() {
       description:
         "Our Maple House floor plan features 6 private bedrooms, each with en-suite bathrooms, arranged around spacious common areas designed for comfort and accessibility.",
     },
-    willow: {
-      name: "Willow House",
-      image: "/placeholder.svg?height=800&width=1200",
-      description:
-        "The Willow House floor plan offers 6 private suites with a slightly different layout that maximizes natural light and provides cozy community spaces for social interaction.",
-    },
+    // willow: {
+    //   name: "Willow House",
+    //   image: "/placeholder.svg?height=800&width=1200",
+    //   description:
+    //     "The Willow House floor plan offers 6 private suites with a slightly different layout that maximizes natural light and provides cozy community spaces for social interaction.",
+    // },
   };
 
   return (
@@ -42,7 +42,7 @@ export default function FloorPlanDisplay() {
                 >
                   Maple House
                 </TabsTrigger>
-                <TabsTrigger
+                {/* <TabsTrigger
                   value="willow"
                   onClick={() => setActiveFloorPlan("willow")}
                   className={cn(
@@ -53,7 +53,7 @@ export default function FloorPlanDisplay() {
                   )}
                 >
                   Willow House
-                </TabsTrigger>
+                </TabsTrigger> */}
               </TabsList>
             </div>
 
@@ -74,7 +74,7 @@ export default function FloorPlanDisplay() {
               </div>
             </TabsContent>
 
-            <TabsContent value="willow" className="mt-0">
+            {/* <TabsContent value="willow" className="mt-0">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="relative h-[400px] md:h-[500px] mb-6 border border-gray-200 rounded overflow-hidden">
                   <Image
@@ -89,7 +89,7 @@ export default function FloorPlanDisplay() {
                 </h3>
                 <p className="text-gray-700">{floorPlans.willow.description}</p>
               </div>
-            </TabsContent>
+            </TabsContent> */}
           </Tabs>
         </div>
       </div>

@@ -65,7 +65,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-[9999]">
         <div className="container mx-auto px-8 py-2">
           <div className="flex items-center justify-between h-28 sm:h-32">
             {/* Logo */}
@@ -95,7 +95,7 @@ export default function Header() {
                     <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-brand-primary font-medium transition-colors text-sm xl:text-base">
                       {item.name} <ChevronDown size={16} className="ml-1" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="z-[10000]">
                       {item.dropdown.map((subItem) => (
                         <DropdownMenuItem key={subItem.name} asChild>
                           <Link
@@ -123,7 +123,7 @@ export default function Header() {
               )}
               <Button
                 onClick={openTourModal}
-                className="bg-brand-primary hover:bg-brand-dark text-white px-4 xl:px-6 py-2 rounded-md font-medium text-sm xl:text-base"
+                className="bg-[#A7A936] hover:bg-brand-dark text-white px-4 xl:px-8 py-7 rounded-md font-medium text-sm xl:text-base"
               >
                 Schedule a Tour
               </Button>
@@ -173,7 +173,7 @@ export default function Header() {
                   openTourModal();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full bg-brand-primary hover:bg-brand-dark text-white mt-4 py-3"
+                className="w-full bg-[#A7A936] hover:bg-brand-dark text-white mt-4 py-3"
               >
                 Schedule a Tour
               </Button>

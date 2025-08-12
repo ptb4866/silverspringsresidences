@@ -298,7 +298,7 @@ export default function TourModal() {
   const requiredFieldsInfo = getRequiredFieldsInfo();
 
   return (
-    <div className="fixed inset-0 z-50 flex">
+    <div className="fixed inset-0 z-[10001] flex">
       <div
         className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"
         onClick={closeTourModal}

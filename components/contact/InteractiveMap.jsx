@@ -38,6 +38,41 @@ export default function InteractiveMap() {
         link.rel = "stylesheet";
         link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
         document.head.appendChild(link);
+
+        // Add custom CSS to override Leaflet's z-index values
+        const style = document.createElement("style");
+        style.textContent = `
+          .leaflet-container {
+            z-index: 1 !important;
+            position: relative !important;
+          }
+          .leaflet-popup {
+            z-index: 1000 !important;
+          }
+          .leaflet-control {
+            z-index: 1000 !important;
+          }
+          .leaflet-pane {
+            z-index: 1 !important;
+          }
+          .leaflet-overlay-pane {
+            z-index: 1 !important;
+          }
+          .leaflet-marker-pane {
+            z-index: 1 !important;
+          }
+          .leaflet-tooltip-pane {
+            z-index: 1 !important;
+          }
+          .leaflet-shadow-pane {
+            z-index: 1 !important;
+          }
+          .leaflet-tile-pane {
+            z-index: 1 !important;
+          }
+        `;
+        document.head.appendChild(style);
+
         const script = document.createElement("script");
         script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
         script.onload = () => {
@@ -195,11 +230,11 @@ export default function InteractiveMap() {
             </div>
           </div>
           <div className="lg:col-span-2">
-            <div className="relative">
+            <div className="relative" style={{ zIndex: 1 }}>
               <div
                 id="map"
                 className="w-full h-96 lg:h-[600px] rounded-lg border border-gray-200"
-                style={{ minHeight: "400px" }}
+                style={{ minHeight: "400px", zIndex: 1, position: "relative" }}
               ></div>
               {!mapLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">

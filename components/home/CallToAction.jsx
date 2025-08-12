@@ -21,7 +21,7 @@ export default function CallToAction() {
           <Button
             onClick={openTourModal}
             size="lg"
-            className="bg-brand-primary hover:bg-brand-dark"
+            className="bg-[#A7A936] hover:bg-brand-dark"
           >
             Schedule a Tour
           </Button>
