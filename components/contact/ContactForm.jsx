@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useContactForm } from "@/hooks/use-contact-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -38,17 +39,33 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values) {
+  const contactForm = useContactForm();
+
+  async function onSubmit(values) {
     setIsSubmitting(true);
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
+    try {
+      await contactForm.mutateAsync({
+        fullName: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: values.message,
+      });
+
       form.reset();
       toast({
         title: "Message Sent",
         description: "Thank you for contacting us. We'll be in touch soon.",
       });
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -58,7 +75,11 @@ export default function ContactForm() {
       </h2>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-6"
+          data-gramm="false"
+        >
           <FormField
             control={form.control}
             name="name"
@@ -66,7 +87,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input placeholder="John Doe" {...field} data-gramm="false" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -81,7 +102,11 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="john@example.com" {...field} />
+                    <Input
+                      placeholder="john@example.com"
+                      {...field}
+                      data-gramm="false"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -95,7 +120,11 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="(555) 123-4567" {...field} />
+                    <Input
+                      placeholder="(555) 123-4567"
+                      {...field}
+                      data-gramm="false"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -111,6 +140,7 @@ export default function ContactForm() {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
+                    data-gramm="false"
                     placeholder="Please tell us how we can help you..."
                     className="min-h-[120px]"
                     {...field}
