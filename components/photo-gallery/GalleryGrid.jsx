@@ -8,8 +8,8 @@ import { X } from "lucide-react";
 export default function GalleryGrid() {
   const categories = [
     "All",
-    "Maple House",
-    "Willow House",
+    "Braverde House",
+    // "Willow House",
     "Bedrooms",
     "Common Areas",
     "Dining",
@@ -20,7 +20,7 @@ export default function GalleryGrid() {
     {
       src: "/placeholder.svg?height=600&width=800",
       alt: "Exterior view of Silver Springs Residency",
-      category: "Maple House",
+      category: "Braverde House",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
@@ -42,11 +42,11 @@ export default function GalleryGrid() {
       alt: "Landscaped garden and patio area",
       category: "Gardens",
     },
-    {
-      src: "/placeholder.svg?height=600&width=800",
-      alt: "Exterior view of Willow House",
-      category: "Willow House",
-    },
+    // {
+    //   src: "/placeholder.svg?height=600&width=800",
+    //   alt: "Exterior view of Willow House",
+    //   category: "Willow House",
+    // },
     {
       src: "/placeholder.svg?height=600&width=800",
       alt: "Activity and game room",
@@ -70,7 +70,7 @@ export default function GalleryGrid() {
     {
       src: "/placeholder.svg?height=600&width=800",
       alt: "Welcoming entrance and foyer",
-      category: "Maple House",
+      category: "Braverde House",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
