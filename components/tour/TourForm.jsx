@@ -147,9 +147,9 @@ export default function TourForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="maple">Maple House</SelectItem>
-                    <SelectItem value="willow">Willow House</SelectItem>
-                    <SelectItem value="both">Both Locations</SelectItem>
+                    <SelectItem value="braverde">Braverde House</SelectItem>
+                    {/* <SelectItem value="willow">Willow House</SelectItem> */}
+                    {/* <SelectItem value="both">Both Locations</SelectItem> */}
                   </SelectContent>
                 </Select>
                 <FormMessage />

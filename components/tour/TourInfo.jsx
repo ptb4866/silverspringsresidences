@@ -68,21 +68,21 @@ export default function TourInfo() {
               className="text-green-600 mr-3 mt-1 flex-shrink-0"
             />
             <div>
-              <p className="font-medium mb-1">Our Locations:</p>
+              <p className="font-medium mb-1">Our Location:</p>
               <p className="text-gray-700 mb-2">
-                <span className="font-medium">Maple House:</span>
+                <span className="font-medium">Braverde House:</span>
                 <br />
-                123 Silver Springs Lane
+                32336 Parker Street
                 <br />
-                Silver City, TX 12345
+                Menifee, CA 92584
               </p>
-              <p className="text-gray-700">
+              {/* <p className="text-gray-700">
                 <span className="font-medium">Willow House:</span>
                 <br />
                 456 Silver Springs Circle
                 <br />
                 Silver City, TX 12345
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -91,10 +91,10 @@ export default function TourInfo() {
             <div>
               <p className="font-medium">Questions? Call us:</p>
               <a
-                href="tel:+15551234567"
+                href="tel:+19512460108"
                 className="text-green-700 hover:text-green-800 transition-colors"
               >
-                (555) 123-4567
+                (951) 246-0108
               </a>
             </div>
           </div>

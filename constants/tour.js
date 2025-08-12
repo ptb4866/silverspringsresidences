@@ -1,7 +1,7 @@
 export const TOUR_LOCATIONS = {
-  MAPLE: "maple",
-  WILLOW: "willow",
-  BOTH: "both",
+  BRAVERDE: "braverde",
+  // WILLOW: "willow",
+  // BOTH: "both",
 };
 
 export const TOUR_STATUS = {

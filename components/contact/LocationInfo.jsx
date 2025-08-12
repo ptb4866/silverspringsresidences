@@ -10,7 +10,9 @@ export default function LocationInfo() {
       <div className="space-y-8">
         {/* Location 1 */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Maple House</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-4">
+            Braverde House
+          </h3>
 
           <div className="space-y-4 mb-6">
             <div className="flex items-start">
@@ -19,29 +21,29 @@ export default function LocationInfo() {
                 className="mr-3 text-green-600 mt-1 flex-shrink-0"
               />
               <p className="text-gray-700">
-                123 Silver Springs Lane
+                32336 Parker Street
                 <br />
-                Silver City, TX 12345
+                Menifee, CA 92584
               </p>
             </div>
 
             <div className="flex items-center">
               <Phone size={20} className="mr-3 text-green-600 flex-shrink-0" />
               <a
-                href="tel:+15551234567"
+                href="tel:+19512460108"
                 className="text-gray-700 hover:text-green-700 transition-colors"
               >
-                (555) 123-4567
+                (951) 246-0108
               </a>
             </div>
 
             <div className="flex items-center">
               <Mail size={20} className="mr-3 text-green-600 flex-shrink-0" />
               <a
-                href="mailto:maple@silversprings.com"
+                href="mailto:silverspringsresidence@gmail.com"
                 className="text-gray-700 hover:text-green-700 transition-colors"
               >
-                maple@silversprings.com
+                silverspringsresidence@gmail.com
               </a>
             </div>
 
@@ -71,8 +73,8 @@ export default function LocationInfo() {
           </Button>
         </div>
 
-        {/* Location 2 */}
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        {/* Location 2 - Commented out for future use */}
+        {/* <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-bold text-gray-800 mb-4">Willow House</h3>
 
           <div className="space-y-4 mb-6">
@@ -132,7 +134,7 @@ export default function LocationInfo() {
           <Button asChild className="w-full bg-green-700 hover:bg-green-800">
             <Link href="/schedule-a-tour">Schedule a Tour</Link>
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

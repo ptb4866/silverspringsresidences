@@ -1,6 +1,6 @@
 -- Create enum types for status and location
 CREATE TYPE tour_status AS ENUM ('pending', 'confirmed', 'cancelled');
-CREATE TYPE tour_location AS ENUM ('maple', 'willow', 'both');
+CREATE TYPE tour_location AS ENUM ('braverde');
 
 -- Create the tour_requests table
 CREATE TABLE tour_requests (

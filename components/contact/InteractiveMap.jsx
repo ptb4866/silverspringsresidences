@@ -7,22 +7,22 @@ import { Button } from "@/components/ui/button";
 const locations = [
   {
     id: 1,
-    name: "Silver Springs Downtown",
-    address: "123 Silver Springs Lane, Downtown District, 12345",
-    phone: "(555) 123-4567",
-    coordinates: [40.7128, -74.006],
+    name: "Braverde House",
+    address: "32336 Parker Street, Menifee, CA 92584",
+    phone: "(951) 246-0108",
+    coordinates: [33.6971, -117.1853], // Menifee, CA coordinates
     hours: "Mon-Fri: 9AM-5PM",
-    description: "Our flagship location in the heart of downtown",
+    description: "Our beautiful assisted living home in Menifee",
   },
-  {
-    id: 2,
-    name: "Silver Springs Lakeside",
-    address: "456 Silver Springs Circle, Lakeside Community, 12346",
-    phone: "(555) 123-4568",
-    coordinates: [40.7589, -73.9851],
-    hours: "Mon-Fri: 9AM-5PM",
-    description: "Peaceful lakeside setting with beautiful views",
-  },
+  // {
+  //   id: 2,
+  //   name: "Silver Springs Lakeside",
+  //   address: "456 Silver Springs Circle, Lakeside Community, 12346",
+  //   phone: "(555) 123-4568",
+  //   coordinates: [40.7589, -73.9851],
+  //   hours: "Mon-Fri: 9AM-5PM",
+  //   description: "Peaceful lakeside setting with beautiful views",
+  // },
 ];
 
 export default function InteractiveMap() {

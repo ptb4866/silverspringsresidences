@@ -7,12 +7,12 @@ import { useTourModal } from "@/hooks/use-tour-modal";
 const locations = [
   {
     id: 1,
-    name: "Silver Springs Downtown",
-    address: "123 Silver Springs Lane",
-    city: "Downtown District",
-    zipCode: "12345",
-    phone: "(555) 123-4567",
-    email: "downtown@silversprings.com",
+    name: "Braverde House",
+    address: "32336 Parker Street",
+    city: "Menifee",
+    zipCode: "92584",
+    phone: "(951) 246-0108",
+    email: "silverspringsresidence@gmail.com",
     hours: { weekdays: "9:00 AM - 5:00 PM", weekends: "By Appointment" },
     amenities: [
       "Memory Care Unit",
@@ -29,30 +29,30 @@ const locations = [
       airport: "15 minutes from Downtown Airport",
     },
   },
-  {
-    id: 2,
-    name: "Silver Springs Lakeside",
-    address: "456 Silver Springs Circle",
-    city: "Lakeside Community",
-    zipCode: "12346",
-    phone: "(555) 123-4568",
-    email: "lakeside@silversprings.com",
-    hours: { weekdays: "9:00 AM - 5:00 PM", weekends: "By Appointment" },
-    amenities: [
-      "Lakefront Views",
-      "Wellness Center",
-      "Library",
-      "Art Studio",
-      "Walking Trails",
-      "24/7 Nursing Care",
-    ],
-    transportation: {
-      driving: "Take Route 45 to Lakeside Drive",
-      parking: "Ample parking with covered options",
-      publicTransit: "Lakeside Express Bus Service",
-      airport: "20 minutes from Regional Airport",
-    },
-  },
+  // {
+  //   id: 2,
+  //   name: "Silver Springs Lakeside",
+  //   address: "456 Silver Springs Circle",
+  //   city: "Lakeside Community",
+  //   zipCode: "12346",
+  //   phone: "(555) 123-4568",
+  //   email: "lakeside@silversprings.com",
+  //   hours: { weekdays: "9:00 AM - 5:00 PM", weekends: "By Appointment" },
+  //   amenities: [
+  //     "Lakefront Views",
+  //     "Wellness Center",
+  //     "Library",
+  //     "Art Studio",
+  //     "Walking Trails",
+  //     "24/7 Nursing Care",
+  //   ],
+  //   transportation: {
+  //     driving: "Take Route 45 to Lakeside Drive",
+  //     parking: "Ample parking with covered options",
+  //     publicTransit: "Lakeside Express Bus Service",
+  //     airport: "20 minutes from Regional Airport",
+  //   },
+  // },
 ];
 
 export default function LocationsList() {

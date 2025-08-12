@@ -554,11 +554,13 @@ export default function TourModal() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="maple">Maple House</SelectItem>
-                            <SelectItem value="willow">Willow House</SelectItem>
-                            <SelectItem value="both">
-                              Both Locations (Extended Tour)
+                            <SelectItem value="braverde">
+                              Braverde House
                             </SelectItem>
+                            {/* <SelectItem value="willow">Willow House</SelectItem> */}
+                            {/* <SelectItem value="both">
+                              Both Locations (Extended Tour)
+                            </SelectItem> */}
                           </SelectContent>
                         </Select>
                         <FormMessage />

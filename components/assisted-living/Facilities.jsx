@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 export default function Facilities() {
   const homes = [
     {
-      name: "Maple House",
+      name: "Braverde House",
       features: [
         "6 private bedrooms with en-suite bathrooms",
         "Spacious common living areas",
@@ -15,18 +15,18 @@ export default function Facilities() {
       ],
       image: "/senior-care-home-exterior.png",
     },
-    {
-      name: "Willow House",
-      features: [
-        "6 private bedrooms with en-suite bathrooms",
-        "Cozy fireplace gathering area",
-        "Accessible walk-in showers",
-        "Covered porch and garden space",
-        "24/7 monitoring systems",
-        "Family-style dining room",
-      ],
-      image: "/senior-care-interior.png",
-    },
+    // {
+    //   name: "Willow House",
+    //   features: [
+    //     "6 private bedrooms with en-suite bathrooms",
+    //     "Cozy fireplace gathering area",
+    //     "Accessible walk-in showers",
+    //     "Covered porch and garden space",
+    //     "24/7 monitoring systems",
+    //     "Family-style dining room",
+    //   ],
+    //   image: "/senior-care-interior.png",
+    // },
   ];
 
   return (
