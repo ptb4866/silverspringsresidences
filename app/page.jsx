@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <LuxuryLiving />
       <Features />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CallToAction />
     </>
   );

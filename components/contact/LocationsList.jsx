@@ -113,7 +113,7 @@ export default function LocationsList() {
                     <div className="grid grid-cols-2 gap-2">
                       {location.amenities.map((amenity, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                          <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
                           <span className="text-sm text-gray-700">
                             {amenity}
                           </span>
@@ -123,7 +123,7 @@ export default function LocationsList() {
                   </div>
                   <Button
                     onClick={openTourModal}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg font-semibold"
+                    className="w-full bg-brand-primary hover:bg-brand-dark text-white py-3 text-lg font-semibold"
                   >
                     Schedule Tour at {location.name}
                   </Button>
@@ -156,7 +156,7 @@ export default function LocationsList() {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center flex-shrink-0">
                         <Bus className="w-5 h-5 text-green-600" />
                       </div>
                       <div>
@@ -185,7 +185,7 @@ export default function LocationsList() {
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <Button
                       variant="outline"
-                      className="w-full border-green-600 text-green-600 hover:bg-green-50 bg-transparent"
+                      className="w-full border-brand-primary text-brand-primary hover:bg-brand-light bg-transparent"
                       onClick={() =>
                         window.open(
                           `https://maps.google.com/?q=${encodeURIComponent(

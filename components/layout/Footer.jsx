@@ -172,7 +172,7 @@ export default function Footer() {
               <div className="pt-4">
                 <Link
                   href="/schedule-a-tour"
-                  className="inline-block px-6 py-2 bg-green-700 hover:bg-green-800 rounded transition-colors text-white font-medium"
+                  className="inline-block px-6 py-2 bg-brand-primary hover:bg-brand-dark rounded transition-colors text-white font-medium"
                 >
                   Schedule Your Visit
                 </Link>

@@ -68,7 +68,10 @@ export default function LocationInfo() {
             <p className="text-gray-500">Map Embed Would Go Here</p>
           </div>
 
-          <Button asChild className="w-full bg-green-700 hover:bg-green-800">
+          <Button
+            asChild
+            className="w-full bg-brand-primary hover:bg-brand-dark"
+          >
             <Link href="/schedule-a-tour">Schedule a Tour</Link>
           </Button>
         </div>

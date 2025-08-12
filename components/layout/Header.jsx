@@ -65,13 +65,13 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-8 py-2">
           <div className="flex items-center justify-between h-28 sm:h-32">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center py-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mr-4 sm:mr-6">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand-light rounded-full flex items-center justify-center mr-4 sm:mr-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-primary rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg sm:text-2xl">
                     SS
                   </span>
@@ -92,7 +92,7 @@ export default function Header() {
               {navItems.map((item) =>
                 item.dropdown ? (
                   <DropdownMenu key={item.name}>
-                    <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-green-600 font-medium transition-colors text-sm xl:text-base">
+                    <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-brand-primary font-medium transition-colors text-sm xl:text-base">
                       {item.name} <ChevronDown size={16} className="ml-1" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
@@ -113,8 +113,8 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "text-gray-700 hover:text-green-600 font-medium transition-colors text-sm xl:text-base",
-                      pathname === item.href ? "text-green-600" : ""
+                      "text-gray-700 hover:text-brand-primary font-medium transition-colors text-sm xl:text-base",
+                      pathname === item.href ? "text-brand-primary" : ""
                     )}
                   >
                     {item.name}
@@ -123,7 +123,7 @@ export default function Header() {
               )}
               <Button
                 onClick={openTourModal}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 xl:px-6 py-2 rounded-md font-medium text-sm xl:text-base"
+                className="bg-brand-primary hover:bg-brand-dark text-white px-4 xl:px-6 py-2 rounded-md font-medium text-sm xl:text-base"
               >
                 Schedule a Tour
               </Button>
@@ -147,7 +147,7 @@ export default function Header() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-3 text-gray-700 font-medium hover:text-green-600 transition-colors"
+                    className="block py-3 text-gray-700 font-medium hover:text-brand-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -158,7 +158,7 @@ export default function Header() {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block py-2 text-gray-600 text-sm hover:text-green-600 transition-colors"
+                          className="block py-2 text-gray-600 text-sm hover:text-brand-primary transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {subItem.name}
@@ -173,7 +173,7 @@ export default function Header() {
                   openTourModal();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full bg-green-600 hover:bg-green-700 text-white mt-4 py-3"
+                className="w-full bg-brand-primary hover:bg-brand-dark text-white mt-4 py-3"
               >
                 Schedule a Tour
               </Button>

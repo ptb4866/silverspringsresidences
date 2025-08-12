@@ -4,7 +4,7 @@ export default function LuxuryLiving() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-600 mb-4 leading-tight">
-            Luxury Senior Living
+            Senior Living
           </h2>
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-600 mb-12 leading-tight">
             in Menifee, California

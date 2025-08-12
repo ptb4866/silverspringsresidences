@@ -90,7 +90,7 @@ export default function BlogSidebar() {
       </div>
 
       {/* Newsletter Signup */}
-      <div className="bg-green-50 p-6 rounded-lg shadow-md border border-green-100">
+      <div className="bg-brand-light p-6 rounded-lg shadow-md border border-brand-light">
         <h3 className="text-lg font-bold mb-2 text-gray-800">
           Subscribe to Our Newsletter
         </h3>
@@ -99,7 +99,7 @@ export default function BlogSidebar() {
         </p>
         <div className="space-y-3">
           <Input type="email" placeholder="Your email address" />
-          <Button className="w-full bg-green-700 hover:bg-green-800">
+          <Button className="w-full bg-brand-primary hover:bg-brand-dark">
             Subscribe
           </Button>
         </div>

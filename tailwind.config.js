@@ -64,6 +64,14 @@ const config = {
           900: "#14532d",
           950: "#052e16",
         },
+        // Custom brand colors
+        brand: {
+          primary: "#577964", // Dark green
+          secondary: "#A7A936", // Olive green
+          accent: "#9FA133", // Light olive
+          dark: "#4D6A58", // Darker green
+          light: "#CFE2DC", // Light mint
+        },
         gray: {
           50: "#f9fafb",
           100: "#f3f4f6",
@@ -103,4 +111,3 @@ const config = {
 };
 
 module.exports = config;
-

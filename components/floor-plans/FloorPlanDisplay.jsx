@@ -35,7 +35,9 @@ export default function FloorPlanDisplay() {
                   onClick={() => setActiveFloorPlan("maple")}
                   className={cn(
                     "text-base px-6",
-                    activeFloorPlan === "maple" ? "bg-green-700 text-white" : ""
+                    activeFloorPlan === "maple"
+                      ? "bg-brand-primary text-white"
+                      : ""
                   )}
                 >
                   Maple House
@@ -46,7 +48,7 @@ export default function FloorPlanDisplay() {
                   className={cn(
                     "text-base px-6",
                     activeFloorPlan === "willow"
-                      ? "bg-green-700 text-white"
+                      ? "bg-brand-primary text-white"
                       : ""
                   )}
                 >

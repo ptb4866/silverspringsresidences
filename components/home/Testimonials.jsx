@@ -60,7 +60,7 @@ export default function Testimonials() {
   }, [nextTestimonial]);
 
   return (
-    <section className="py-20 bg-green-700 text-white">
+    <section className="py-20 bg-brand-primary text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Quote size={48} className="mx-auto mb-8 opacity-30" />
@@ -90,7 +90,7 @@ export default function Testimonials() {
                     className="rounded-full object-cover mb-3"
                   />
                   <p className="font-bold text-lg">{testimonial.author}</p>
-                  <p className="text-green-200">{testimonial.relation}</p>
+                  <p className="text-brand-light">{testimonial.relation}</p>
                 </div>
               </div>
             ))}
@@ -99,7 +99,7 @@ export default function Testimonials() {
           <div className="flex justify-center mt-8 space-x-4">
             <button
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-green-800 hover:bg-green-900 transition-colors"
+              className="p-2 rounded-full bg-brand-dark hover:bg-brand-primary transition-colors"
               aria-label="Previous testimonial"
             >
               <ArrowLeft size={20} />
@@ -117,7 +117,7 @@ export default function Testimonials() {
                   }}
                   className={cn(
                     "w-2 h-2 rounded-full transition-all",
-                    idx === current ? "bg-white w-4" : "bg-green-400"
+                    idx === current ? "bg-white w-4" : "bg-brand-secondary"
                   )}
                   aria-label={`Go to testimonial ${idx + 1}`}
                 />
@@ -125,7 +125,7 @@ export default function Testimonials() {
             </div>
             <button
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-green-800 hover:bg-green-900 transition-colors"
+              className="p-2 rounded-full bg-brand-dark hover:bg-brand-primary transition-colors"
               aria-label="Next testimonial"
             >
               <ArrowRight size={20} />

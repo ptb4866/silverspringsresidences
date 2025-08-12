@@ -26,7 +26,7 @@ export default function Pagination() {
             className={cn(
               "px-4 py-2 rounded-md",
               page === currentPage
-                ? "bg-green-700 text-white"
+                ? "bg-brand-primary text-white"
                 : "hover:bg-gray-100 text-gray-700"
             )}
           >

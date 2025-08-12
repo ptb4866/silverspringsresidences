@@ -10,37 +10,37 @@ import {
 export default function ServicesList() {
   const services = [
     {
-      icon: <Heart className="h-12 w-12 text-green-600" />,
+      icon: <Heart className="h-12 w-12 text-brand-primary" />,
       title: "Personalized Care Plans",
       description:
         "Customized care plans tailored to each resident's needs, regularly reviewed and updated as needs change.",
     },
     {
-      icon: <PillIcon className="h-12 w-12 text-green-600" />,
+      icon: <PillIcon className="h-12 w-12 text-brand-primary" />,
       title: "Medication Management",
       description:
         "Professional oversight of all medications, including ordering, dispensing, and administration.",
     },
     {
-      icon: <Utensils className="h-12 w-12 text-green-600" />,
+      icon: <Utensils className="h-12 w-12 text-brand-primary" />,
       title: "Nutritious Meals & Snacks",
       description:
         "Home-cooked meals prepared on-site with attention to dietary needs and preferences.",
     },
     {
-      icon: <Activity className="h-12 w-12 text-green-600" />,
+      icon: <Activity className="h-12 w-12 text-brand-primary" />,
       title: "Daily Activities",
       description:
         "Engaging social, physical, and recreational activities designed to enhance quality of life.",
     },
     {
-      icon: <Clock className="h-12 w-12 text-green-600" />,
+      icon: <Clock className="h-12 w-12 text-brand-primary" />,
       title: "24/7 Care Staff",
       description:
         "Trained caregivers available around the clock to provide assistance whenever needed.",
     },
     {
-      icon: <Shield className="h-12 w-12 text-green-600" />,
+      icon: <Shield className="h-12 w-12 text-brand-primary" />,
       title: "Safety & Security",
       description:
         "Comprehensive safety measures including emergency call systems and monitored entrances.",
@@ -72,41 +72,41 @@ export default function ServicesList() {
           ))}
         </div>
 
-        <div className="mt-12 p-6 bg-green-50 rounded-lg border border-green-100">
+        <div className="mt-12 p-6 bg-brand-light rounded-lg border border-brand-light">
           <h3 className="text-xl font-bold mb-3 text-gray-800">
             Additional Services Available:
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Assistance with activities of daily living</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Coordination of medical appointments</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Incontinence care</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Mobility assistance</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Transportation services</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Wellness checks</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Housekeeping and laundry</span>
             </li>
             <li className="flex items-center">
-              <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-brand-primary rounded-full mr-2"></div>
               <span>Care coordination with healthcare providers</span>
             </li>
           </ul>

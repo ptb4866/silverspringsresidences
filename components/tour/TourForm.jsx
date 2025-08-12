@@ -255,7 +255,7 @@ export default function TourForm() {
 
           <Button
             type="submit"
-            className="w-full bg-green-700 hover:bg-green-800"
+            className="w-full bg-brand-primary hover:bg-brand-dark"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Schedule Tour"}

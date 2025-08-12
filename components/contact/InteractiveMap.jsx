@@ -113,8 +113,8 @@ export default function InteractiveMap() {
                   key={location.id}
                   className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                     selectedLocation.id === location.id
-                      ? "border-green-600 bg-green-50"
-                      : "border-gray-200 hover:border-green-300"
+                      ? "border-brand-primary bg-brand-light"
+                      : "border-gray-200 hover:border-brand-secondary"
                   }`}
                   onClick={() => setSelectedLocation(location)}
                 >
@@ -122,7 +122,7 @@ export default function InteractiveMap() {
                     <MapPin
                       className={`w-5 h-5 mt-1 ${
                         selectedLocation.id === location.id
-                          ? "text-green-600"
+                          ? "text-brand-primary"
                           : "text-gray-400"
                       }`}
                     />
@@ -147,22 +147,22 @@ export default function InteractiveMap() {
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-4 h-4 text-green-600" />
+                  <MapPin className="w-4 h-4 text-brand-primary" />
                   <span className="text-sm text-gray-700">
                     {selectedLocation.address}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-4 h-4 text-green-600" />
+                  <Phone className="w-4 h-4 text-brand-primary" />
                   <a
                     href={`tel:${selectedLocation.phone}`}
-                    className="text-sm text-gray-700 hover:text-green-600"
+                    className="text-sm text-gray-700 hover:text-brand-primary"
                   >
                     {selectedLocation.phone}
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="w-4 h-4 text-green-600" />
+                  <Clock className="w-4 h-4 text-brand-primary" />
                   <span className="text-sm text-gray-700">
                     {selectedLocation.hours}
                   </span>
@@ -170,7 +170,7 @@ export default function InteractiveMap() {
               </div>
               <div className="mt-6 space-y-3">
                 <Button
-                  className="w-full bg-green-600 hover:bg-green-700"
+                  className="w-full bg-brand-primary hover:bg-brand-dark"
                   onClick={() =>
                     window.open(
                       `https://maps.google.com/?q=${encodeURIComponent(
@@ -185,7 +185,7 @@ export default function InteractiveMap() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-green-600 text-green-600 hover:bg-green-50 bg-transparent"
+                  className="w-full border-brand-primary text-brand-primary hover:bg-brand-light bg-transparent"
                   onClick={() => window.open(`tel:${selectedLocation.phone}`)}
                 >
                   <Phone className="w-4 h-4 mr-2" />
@@ -204,7 +204,7 @@ export default function InteractiveMap() {
               {!mapLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
                   <div className="text-center">
-                    <Loader className="w-8 h-8 text-green-600 animate-spin mx-auto mb-2" />
+                    <Loader className="w-8 h-8 text-brand-primary animate-spin mx-auto mb-2" />
                     <p className="text-gray-600">Loading map...</p>
                   </div>
                 </div>

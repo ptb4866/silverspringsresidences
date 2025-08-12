@@ -43,7 +43,7 @@ export default function TestimonialsSlim() {
   }, [nextTestimonial]);
 
   return (
-    <section className="py-12 bg-green-700 text-white">
+    <section className="py-12 bg-brand-primary text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <Quote size={36} className="mx-auto mb-6 opacity-30" />
@@ -82,7 +82,7 @@ export default function TestimonialsSlim() {
                 }}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all",
-                  idx === current ? "bg-white w-4" : "bg-green-400"
+                  idx === current ? "bg-white w-4" : "bg-brand-secondary"
                 )}
                 aria-label={`Go to testimonial ${idx + 1}`}
               />

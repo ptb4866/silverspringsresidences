@@ -31,13 +31,13 @@ export default function Hero() {
           </h1>
         </div>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-gray-100">
-          Luxury assisted living in a warm, comfortable home environment
+          Assisted living in a warm, comfortable home environment
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
             onClick={openTourModal}
             size="lg"
-            className="bg-green-700 hover:bg-green-800"
+            className="bg-brand-primary hover:bg-brand-dark"
           >
             Schedule a Tour
           </Button>

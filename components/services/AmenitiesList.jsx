@@ -78,7 +78,7 @@ export default function AmenitiesList() {
                 <ul className="space-y-3">
                   {category.items.map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 mr-2"></div>
+                      <div className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-2"></div>
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}

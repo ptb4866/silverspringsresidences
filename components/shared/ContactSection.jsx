@@ -7,7 +7,7 @@ export default function ContactSection() {
   const { openTourModal } = useTourModal();
 
   return (
-    <section className="py-16 bg-green-600 text-white">
+    <section className="py-16 bg-brand-primary text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-light mb-6">
           Have Questions? We're Here to Help

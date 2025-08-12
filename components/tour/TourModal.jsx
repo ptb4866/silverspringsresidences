@@ -350,7 +350,7 @@ export default function TourModal() {
                   className={cn(
                     "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all",
                     getStepStatus(stepNumber) === "completed"
-                      ? "bg-green-600 text-white"
+                      ? "bg-brand-primary text-white"
                       : getStepStatus(stepNumber) === "current"
                       ? "bg-blue-600 text-white"
                       : "bg-gray-200 text-gray-600"
@@ -367,7 +367,7 @@ export default function TourModal() {
                     className={cn(
                       "flex-1 h-1 mx-2 transition-all",
                       getStepStatus(stepNumber) === "completed"
-                        ? "bg-green-600"
+                        ? "bg-brand-primary"
                         : "bg-gray-200"
                     )}
                   />
@@ -807,7 +807,7 @@ export default function TourModal() {
                 className={cn(
                   "transition-all",
                   canProceedToNextStep
-                    ? "bg-green-600 hover:bg-green-700"
+                    ? "bg-brand-primary hover:bg-brand-dark"
                     : "bg-gray-300 cursor-not-allowed hover:bg-gray-300"
                 )}
               >
@@ -816,7 +816,7 @@ export default function TourModal() {
             ) : (
               <Button
                 onClick={form.handleSubmit(onSubmit)}
-                className="bg-green-600 hover:bg-green-700"
+                className="bg-brand-primary hover:bg-brand-dark"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
