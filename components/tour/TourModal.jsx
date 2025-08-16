@@ -96,6 +96,7 @@ export default function TourModal() {
   const [step, setStep] = useState(1);
   const [selectedDate, setSelectedDate] = useState();
   const [canProceedToNextStep, setCanProceedToNextStep] = useState(false);
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const { toast } = useToast();
   const { isOpen, closeTourModal } = useTourModal();
 
@@ -198,6 +199,7 @@ export default function TourModal() {
     if (date) {
       setSelectedDate(date);
       form.setValue("date", date, { shouldValidate: true });
+      setIsDatePickerOpen(false); // Close the popover after date selection
     }
   };
 
@@ -218,6 +220,7 @@ export default function TourModal() {
   const tourRequest = useTourRequest();
 
   async function onSubmit(values) {
+    console.log("Form submitted with values:", values);
     setIsSubmitting(true);
     try {
       const result = await tourRequest.mutateAsync({
@@ -235,9 +238,10 @@ export default function TourModal() {
         marketingConsent: values.marketingConsent,
       });
 
+      console.log("Tour request result:", result);
       toast({
         title: "Tour Scheduled Successfully!",
-        description: `Your tour has been scheduled! Confirmation #${result.confirmation_number}. We'll send you an email with the details shortly.`,
+        description: `Your tour has been scheduled! Confirmation #${result.id}. We'll send you an email with the details shortly.`,
       });
       closeTourModal();
     } catch (error) {
@@ -504,7 +508,7 @@ export default function TourModal() {
                               <SelectValue placeholder="Select relationship" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="z-[10002]">
                             <SelectItem value="self">
                               I am the potential resident
                             </SelectItem>
@@ -553,14 +557,10 @@ export default function TourModal() {
                               <SelectValue placeholder="Select location" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="z-[10002]">
                             <SelectItem value="braverde">
                               Braverde House
                             </SelectItem>
-                            {/* <SelectItem value="willow">Willow House</SelectItem> */}
-                            {/* <SelectItem value="both">
-                              Both Locations (Extended Tour)
-                            </SelectItem> */}
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -573,26 +573,36 @@ export default function TourModal() {
                     render={({ field }) => (
                       <FormItem className="flex flex-col">
                         <FormLabel>Preferred Date *</FormLabel>
-                        <Popover>
+                        <Popover
+                          open={isDatePickerOpen}
+                          onOpenChange={setIsDatePickerOpen}
+                        >
                           <PopoverTrigger asChild>
                             <FormControl>
                               <Button
                                 variant={"outline"}
                                 className={cn(
-                                  "w-full pl-3 text-left font-normal",
-                                  !field.value && "text-muted-foreground"
+                                  "w-full pl-3 text-left font-normal hover:bg-gray-50",
+                                  !field.value
+                                    ? "text-gray-500 border-gray-300"
+                                    : "text-gray-900 border-gray-400"
                                 )}
                               >
                                 {field.value ? (
                                   format(field.value, "EEEE, MMMM do, yyyy")
                                 ) : (
-                                  <span>Pick a date</span>
+                                  <span className="text-gray-500">
+                                    Pick a date
+                                  </span>
                                 )}
-                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                <CalendarIcon className="ml-auto h-4 w-4 text-gray-400" />
                               </Button>
                             </FormControl>
                           </PopoverTrigger>
-                          <PopoverContent className="w-auto p-0" align="start">
+                          <PopoverContent
+                            className="w-auto p-0 z-[10002]"
+                            align="start"
+                          >
                             <Calendar
                               mode="single"
                               selected={field.value}
@@ -624,7 +634,7 @@ export default function TourModal() {
                               <SelectValue placeholder="Select time slot" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="z-[10002]">
                             {timeSlots.map((slot) => (
                               <SelectItem
                                 key={slot.value}
@@ -662,7 +672,7 @@ export default function TourModal() {
                               <SelectValue placeholder="How many people will attend?" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="z-[10002]">
                             <SelectItem value="1">Just me</SelectItem>
                             <SelectItem value="2">2 people</SelectItem>
                             <SelectItem value="3">3 people</SelectItem>

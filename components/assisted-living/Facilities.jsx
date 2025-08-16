@@ -37,9 +37,9 @@ export default function Facilities() {
             Our Residential Homes
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Silver Springs Residency features two beautiful residential homes,
-            each designed to provide comfort, safety, and a warm environment for
-            our residents.
+            Silver Springs Residency features our beautiful Braverde House,
+            designed to provide comfort, safety, and a warm environment for our
+            residents.
           </p>
         </div>
 

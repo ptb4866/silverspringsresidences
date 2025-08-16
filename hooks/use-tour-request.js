@@ -4,6 +4,8 @@ import { supabase } from "@/lib/supabase";
 export function useTourRequest() {
   return useMutation({
     mutationFn: async (tourData) => {
+      console.log("Tour request data:", tourData);
+
       const { data, error } = await supabase
         .from("tour_requests")
         .insert([
@@ -30,8 +32,11 @@ export function useTourRequest() {
         throw new Error(`Failed to schedule tour: ${error.message}`);
       }
 
+      console.log("Tour request saved to database:", data);
+
       // Send email notification
       try {
+        console.log("Attempting to send email notification...");
         const { data: emailData, error: emailError } =
           await supabase.functions.invoke("send-tour-notification", {
             body: { tourData: data },
@@ -50,6 +55,8 @@ export function useTourRequest() {
             "Failed to send email notification. Please try again."
           );
         }
+
+        console.log("Email notification sent successfully:", emailData);
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
         throw new Error("Failed to send email notification. Please try again.");
