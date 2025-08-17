@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, User, Share2, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -68,6 +68,7 @@ const allBlogPosts = [
     date: "August 1, 2025",
     author: "Dr. Sarah Johnson",
     slug: "understanding-senior-care-levels",
+    category: "Assisted Living",
   },
   {
     title: "Creating a Smooth Transition to Assisted Living",
@@ -137,6 +138,7 @@ const allBlogPosts = [
     date: "July 15, 2025",
     author: "Michael Roberts",
     slug: "smooth-transition-to-assisted-living",
+    category: "Assisted Living",
   },
   {
     title: "Nutrition Tips for Seniors: Eating Well as You Age",
@@ -236,6 +238,7 @@ const allBlogPosts = [
     date: "July 1, 2025",
     author: "Jessica Martinez, RD",
     slug: "senior-nutrition-tips",
+    category: "Nutrition",
   },
   {
     title: "Staying Active: Exercise Options for Seniors",
@@ -322,6 +325,7 @@ const allBlogPosts = [
     date: "June 15, 2025",
     author: "Robert Lee, PT",
     slug: "senior-exercise-options",
+    category: "Senior Health",
   },
   {
     title: "Signs It Might Be Time for Assisted Living",
@@ -405,6 +409,7 @@ const allBlogPosts = [
     date: "June 1, 2025",
     author: "Dr. Sarah Johnson",
     slug: "signs-for-assisted-living",
+    category: "Assisted Living",
   },
   // Add more blog posts with full content here...
 ];
@@ -463,6 +468,14 @@ export default function BlogPost() {
                 <User size={16} className="mr-2" />
                 <span>{post.author}</span>
               </div>
+              {post.category && (
+                <div className="flex items-center">
+                  <Tag size={16} className="mr-2" />
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">
+                    {post.category}
+                  </span>
+                </div>
+              )}
               <Button
                 variant="outline"
                 size="sm"

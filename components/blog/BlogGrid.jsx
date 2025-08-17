@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, User } from "lucide-react";
+import { Calendar, User, Tag } from "lucide-react";
 
 export default function BlogGrid({ posts = [] }) {
   if (posts.length === 0) {
@@ -16,7 +16,7 @@ export default function BlogGrid({ posts = [] }) {
       {posts.map((post, index) => (
         <div
           key={index}
-          className="bg-white rounded-lg overflow-hidden shadow-md"
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
           <div className="relative h-48">
             <Image
@@ -25,6 +25,14 @@ export default function BlogGrid({ posts = [] }) {
               fill
               className="object-cover"
             />
+            {post.category && (
+              <div className="absolute top-3 left-3">
+                <span className="bg-green-600 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                  <Tag size={12} className="mr-1" />
+                  {post.category}
+                </span>
+              </div>
+            )}
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold mb-2 text-gray-800 hover:text-green-700 transition-colors">
