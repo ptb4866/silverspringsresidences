@@ -52,62 +52,141 @@ export default function BlogSidebar({
 
     try {
       // First, check if email already exists
-      const { data: existingSubscriber } = await supabase
+      const { data: existingSubscriber, error: checkError } = await supabase
         .from("newsletter_subscribers")
         .select("email")
         .eq("email", email)
         .single();
 
+      if (checkError && checkError.code !== "PGRST116") {
+        // PGRST116 is "not found" error, which is expected when email doesn't exist
+        throw checkError;
+      }
+
       if (existingSubscriber) {
         toast({
-          title: "Already Subscribed",
-          description: "This email is already subscribed to our newsletter.",
-          variant: "destructive",
+          title: "Already Subscribed!",
+          description:
+            "This email address is already subscribed to our newsletter. You're all set to receive our updates!",
         });
+        setEmail("");
         return;
       }
 
       // Insert new subscriber
-      const { error } = await supabase.from("newsletter_subscribers").insert([
-        {
-          email,
-          subscribed_at: new Date().toISOString(),
-          status: "active",
-        },
-      ]);
+      const { error: insertError } = await supabase
+        .from("newsletter_subscribers")
+        .insert([
+          {
+            email,
+            subscribed_at: new Date().toISOString(),
+            status: "active",
+          },
+        ]);
 
-      if (error) {
-        throw error;
+      if (insertError) {
+        // Check if it's a duplicate key error (email already exists)
+        if (insertError.code === "23505") {
+          toast({
+            title: "Already Subscribed!",
+            description:
+              "This email address is already subscribed to our newsletter. You're all set to receive our updates!",
+          });
+          setEmail("");
+          return;
+        }
+        throw insertError;
       }
 
       // Call Supabase Edge Function to add to Resend contact list
-      const { error: functionError } = await supabase.functions.invoke(
-        "add-to-resend-contacts",
-        {
+      const { data: functionData, error: functionError } =
+        await supabase.functions.invoke("add-to-resend-contacts", {
           body: { email },
-        }
-      );
+        });
 
       if (functionError) {
         console.error("Error adding to Resend contacts:", functionError);
-        // Still show success since the email was saved to database
-      }
 
-      toast({
-        title: "Successfully Subscribed!",
-        description:
-          "Thank you for subscribing to our newsletter. You'll receive updates about senior care tips and resources.",
-      });
+        // Check if it's because contact already exists in Resend
+        if (
+          functionError.message &&
+          functionError.message.includes("already exists")
+        ) {
+          toast({
+            title: "Successfully Subscribed!",
+            description:
+              "You're now subscribed to our newsletter! You'll receive updates about senior care tips and resources.",
+          });
+        } else {
+          // Still show success since the email was saved to database
+          toast({
+            title: "Successfully Subscribed!",
+            description:
+              "You're now subscribed to our newsletter! You'll receive updates about senior care tips and resources. (Note: There was a minor issue with our email service, but your subscription is active.)",
+          });
+        }
+      } else {
+        // Check the response from the function for more specific messages
+        if (functionData?.message) {
+          if (functionData.message.includes("already subscribed")) {
+            toast({
+              title: "Already Subscribed!",
+              description:
+                "This email address is already subscribed to our newsletter. You're all set to receive our updates!",
+            });
+          } else {
+            toast({
+              title: "Successfully Subscribed!",
+              description:
+                "You're now subscribed to our newsletter! You'll receive updates about senior care tips and resources.",
+            });
+          }
+        } else {
+          toast({
+            title: "Successfully Subscribed!",
+            description:
+              "You're now subscribed to our newsletter! You'll receive updates about senior care tips and resources.",
+          });
+        }
+      }
 
       setEmail("");
     } catch (error) {
       console.error("Subscription error:", error);
+
+      // Provide more specific error messages based on the error type
+      let errorTitle = "Subscription Failed";
+      let errorDescription =
+        "There was an error subscribing to our newsletter. Please try again.";
+
+      if (error.code === "23505") {
+        errorTitle = "Already Subscribed!";
+        errorDescription =
+          "This email address is already subscribed to our newsletter. You're all set to receive our updates!";
+      } else if (error.message && error.message.includes("network")) {
+        errorTitle = "Connection Error";
+        errorDescription =
+          "Please check your internet connection and try again.";
+      } else if (error.message && error.message.includes("timeout")) {
+        errorTitle = "Request Timeout";
+        errorDescription =
+          "The request took too long to complete. Please try again.";
+      } else if (error.message && error.message.includes("already exists")) {
+        errorTitle = "Already Subscribed!";
+        errorDescription =
+          "This email address is already subscribed to our newsletter. You're all set to receive our updates!";
+      }
+
       toast({
-        title: "Subscription Failed",
-        description:
-          "There was an error subscribing to our newsletter. Please try again.",
-        variant: "destructive",
+        title: errorTitle,
+        description: errorDescription,
+        variant:
+          errorTitle === "Already Subscribed!" ? "default" : "destructive",
       });
+
+      if (errorTitle === "Already Subscribed!") {
+        setEmail("");
+      }
     } finally {
       setIsSubscribing(false);
     }

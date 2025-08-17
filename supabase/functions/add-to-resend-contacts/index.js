@@ -91,10 +91,28 @@ serve(async (req) => {
     // GET /audiences
     const { res: listRes, json: listJson } = await r("/audiences"); // List audiences (docs). :contentReference[oaicite:1]{index=1}
     if (!listRes.ok) {
+      let errorMessage = "Failed to access newsletter service";
+      let errorDetails =
+        listJson?.message ||
+        (await listRes.text()) ||
+        "Unable to access our newsletter service";
+
+      if (listRes.status === 401) {
+        errorMessage = "Newsletter service authentication error";
+        errorDetails = "Unable to authenticate with our newsletter service.";
+      } else if (listRes.status === 403) {
+        errorMessage = "Newsletter service access denied";
+        errorDetails = "Unable to access our newsletter service at this time.";
+      } else if (listRes.status >= 500) {
+        errorMessage = "Newsletter service temporarily unavailable";
+        errorDetails =
+          "Our newsletter service is experiencing issues. Please try again later.";
+      }
+
       return new Response(
         JSON.stringify({
-          error: "Failed to list audiences",
-          details: listJson || (await listRes.text()),
+          error: errorMessage,
+          details: errorDetails,
         }),
         {
           status: listRes.status,
@@ -117,10 +135,29 @@ serve(async (req) => {
         }),
       });
       if (!createAudRes.ok) {
+        let errorMessage = "Failed to setup newsletter service";
+        let errorDetails =
+          createAudJson?.message ||
+          (await createAudRes.text()) ||
+          "Unable to setup our newsletter service";
+
+        if (createAudRes.status === 401) {
+          errorMessage = "Newsletter service authentication error";
+          errorDetails = "Unable to authenticate with our newsletter service.";
+        } else if (createAudRes.status === 403) {
+          errorMessage = "Newsletter service access denied";
+          errorDetails =
+            "Unable to access our newsletter service at this time.";
+        } else if (createAudRes.status >= 500) {
+          errorMessage = "Newsletter service temporarily unavailable";
+          errorDetails =
+            "Our newsletter service is experiencing issues. Please try again later.";
+        }
+
         return new Response(
           JSON.stringify({
-            error: "Audience 'General' not found and could not be created",
-            details: createAudJson || (await createAudRes.text()),
+            error: errorMessage,
+            details: errorDetails,
           }),
           {
             status: createAudRes.status,
@@ -162,7 +199,9 @@ serve(async (req) => {
       // Optional: you could PATCH by email to ensure fields (un)subscribed are updated. (docs). :contentReference[oaicite:4]{index=4}
       return new Response(
         JSON.stringify({
-          message: "Contact already exists in Resend",
+          message: "Email already subscribed to newsletter",
+          details:
+            "This email address is already in our newsletter contact list.",
           audienceId,
         }),
         {
@@ -175,10 +214,33 @@ serve(async (req) => {
       );
     }
     if (!createRes.ok) {
+      let errorMessage = "Failed to add contact to newsletter";
+      let errorDetails =
+        createJson?.message || createText || "Unknown error occurred";
+
+      // Provide more specific error messages based on status code
+      if (createRes.status === 400) {
+        errorMessage = "Invalid email address";
+        errorDetails = "Please provide a valid email address format.";
+      } else if (createRes.status === 401) {
+        errorMessage = "Authentication error";
+        errorDetails = "Unable to authenticate with our email service.";
+      } else if (createRes.status === 403) {
+        errorMessage = "Access denied";
+        errorDetails = "Unable to access our email service at this time.";
+      } else if (createRes.status === 429) {
+        errorMessage = "Too many requests";
+        errorDetails = "Please wait a moment before trying again.";
+      } else if (createRes.status >= 500) {
+        errorMessage = "Email service temporarily unavailable";
+        errorDetails =
+          "Our email service is experiencing issues. Please try again later.";
+      }
+
       return new Response(
         JSON.stringify({
-          error: "Failed to add contact to Resend",
-          details: createJson || createText,
+          error: errorMessage,
+          details: errorDetails,
           status: createRes.status,
         }),
         {
@@ -192,7 +254,8 @@ serve(async (req) => {
     }
     return new Response(
       JSON.stringify({
-        message: "Contact added to Resend successfully",
+        message: "Successfully subscribed to newsletter",
+        details: "Your email has been added to our newsletter contact list.",
         audienceId,
         contact: createJson,
       }),
