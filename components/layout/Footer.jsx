@@ -122,9 +122,9 @@ export default function Footer() {
                   className="mr-3 text-green-500 mt-1 flex-shrink-0"
                 />
                 <p className="text-gray-300">
-                  123 Silver Springs Lane
+                  32336 Parker Street
                   <br />
-                  Silver City, TX 12345
+                  Menifee, CA 92584
                 </p>
               </div>
               <div className="flex items-center">
@@ -133,19 +133,19 @@ export default function Footer() {
                   className="mr-3 text-green-500 flex-shrink-0"
                 />
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+19512460108"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  (555) 123-4567
+                  (951) 246-0108
                 </a>
               </div>
               <div className="flex items-center">
                 <Mail size={20} className="mr-3 text-green-500 flex-shrink-0" />
                 <a
-                  href="mailto:info@silversprings.com"
+                  href="mailto:silverspringsresidence@gmail.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  info@silversprings.com
+                  silverspringsresidence@gmail.com
                 </a>
               </div>
             </div>

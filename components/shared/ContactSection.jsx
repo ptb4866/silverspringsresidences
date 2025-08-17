@@ -19,17 +19,17 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row justify-center gap-8 mb-10">
           <div className="flex items-center justify-center">
             <Phone size={24} className="mr-2" />
-            <a href="tel:+15551234567" className="text-xl hover:underline">
-              (555) 123-4567
+            <a href="tel:+19512460108" className="text-xl hover:underline">
+              (951) 246-0108
             </a>
           </div>
           <div className="flex items-center justify-center">
             <Mail size={24} className="mr-2" />
             <a
-              href="mailto:info@silversprings.com"
+              href="mailto:silverspringsresidence@gmail.com"
               className="text-xl hover:underline"
             >
-              info@silversprings.com
+              silverspringsresidence@gmail.com
             </a>
           </div>
         </div>
