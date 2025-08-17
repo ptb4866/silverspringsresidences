@@ -12,6 +12,7 @@ import { QueryProvider } from "../components/QueryProvider";
 import Home from "../app/page";
 import AssistedLiving from "../app/assisted-living/page";
 import Blog from "../app/blog/page";
+import BlogPost from "../app/blog/[slug]/page";
 import ContactUs from "../app/contact-us/page";
 import LocationsPage from "../app/contact-us/locations/page";
 import MapDirectionsPage from "../app/contact-us/map-directions/page";
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/assisted-living" element={<AssistedLiving />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/contact-us/locations" element={<LocationsPage />} />
               <Route
