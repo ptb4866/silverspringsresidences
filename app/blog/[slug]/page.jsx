@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, User, Share2, Tag } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import ShareButton from "@/components/blog/ShareButton";
 
 // Sample blog data - in a real app, this would come from a database
 const allBlogPosts = [
@@ -476,14 +476,12 @@ export default function BlogPost() {
                   </span>
                 </div>
               )}
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2"
-              >
-                <Share2 size={16} />
-                Share
-              </Button>
+              <ShareButton
+                title={post.title}
+                url={window.location.href}
+                description={post.excerpt}
+                image={post.image}
+              />
             </div>
 
             <p className="text-xl text-gray-600 leading-relaxed">
@@ -513,6 +511,27 @@ export default function BlogPost() {
                     className="prose prose-lg max-w-none"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
+
+                  {/* Share section */}
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                          Share this article
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                          Help others discover this valuable information about
+                          senior care.
+                        </p>
+                      </div>
+                      <ShareButton
+                        title={post.title}
+                        url={window.location.href}
+                        description={post.excerpt}
+                        image={post.image}
+                      />
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -546,29 +565,43 @@ export default function BlogPost() {
                       .filter((p) => p.slug !== slug)
                       .slice(0, 3)
                       .map((relatedPost, index) => (
-                        <Link
-                          key={index}
-                          to={`/blog/${relatedPost.slug}`}
-                          className="block group"
-                        >
-                          <div className="flex items-start space-x-3">
-                            <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0">
-                              <img
-                                src={relatedPost.image}
-                                alt={relatedPost.title}
-                                className="w-full h-full object-cover rounded"
-                              />
+                        <div key={index} className="group">
+                          <Link
+                            to={`/blog/${relatedPost.slug}`}
+                            className="block"
+                          >
+                            <div className="flex items-start space-x-3">
+                              <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0">
+                                <img
+                                  src={relatedPost.image}
+                                  alt={relatedPost.title}
+                                  className="w-full h-full object-cover rounded"
+                                />
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-medium text-gray-800 group-hover:text-green-700 transition-colors line-clamp-2">
+                                  {relatedPost.title}
+                                </h4>
+                                <p className="text-sm text-gray-600 mt-1">
+                                  {relatedPost.date}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="font-medium text-gray-800 group-hover:text-green-700 transition-colors line-clamp-2">
-                                {relatedPost.title}
-                              </h4>
-                              <p className="text-sm text-gray-600 mt-1">
-                                {relatedPost.date}
-                              </p>
-                            </div>
+                          </Link>
+                          <div className="mt-2">
+                            <ShareButton
+                              title={relatedPost.title}
+                              url={`${
+                                typeof window !== "undefined"
+                                  ? window.location.origin
+                                  : ""
+                              }/blog/${relatedPost.slug}`}
+                              description={relatedPost.excerpt}
+                              image={relatedPost.image}
+                              variant="compact"
+                            />
                           </div>
-                        </Link>
+                        </div>
                       ))}
                   </div>
                 </CardContent>

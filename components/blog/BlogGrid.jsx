@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, Tag } from "lucide-react";
+import ShareButton from "./ShareButton";
 
 export default function BlogGrid({ posts = [] }) {
   if (posts.length === 0) {
@@ -52,12 +53,23 @@ export default function BlogGrid({ posts = [] }) {
 
             <p className="text-gray-600 mb-4">{post.excerpt}</p>
 
-            <Link
-              href={`/blog/${post.slug}`}
-              className="text-green-700 font-medium hover:text-green-800 transition-colors"
-            >
-              Read More →
-            </Link>
+            <div className="flex items-center justify-between">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-green-700 font-medium hover:text-green-800 transition-colors"
+              >
+                Read More →
+              </Link>
+              <ShareButton
+                title={post.title}
+                url={`${
+                  typeof window !== "undefined" ? window.location.origin : ""
+                }/blog/${post.slug}`}
+                description={post.excerpt}
+                image={post.image}
+                variant="compact"
+              />
+            </div>
           </div>
         </div>
       ))}

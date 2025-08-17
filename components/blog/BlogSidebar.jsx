@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search, Mail } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
+import ShareButton from "./ShareButton";
 
 export default function BlogSidebar({
   searchTerm = "",
@@ -256,13 +257,24 @@ export default function BlogSidebar({
         <h3 className="text-lg font-bold mb-4 text-gray-800">Recent Posts</h3>
         <ul className="space-y-4">
           {recentPosts.map((post, index) => (
-            <li key={index}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-gray-700 hover:text-green-700 transition-colors text-sm"
-              >
-                {post.title}
-              </Link>
+            <li key={index} className="group">
+              <div className="flex items-start justify-between">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-gray-700 hover:text-green-700 transition-colors text-sm flex-1 mr-2"
+                >
+                  {post.title}
+                </Link>
+                <ShareButton
+                  title={post.title}
+                  url={`${
+                    typeof window !== "undefined" ? window.location.origin : ""
+                  }/blog/${post.slug}`}
+                  description=""
+                  image=""
+                  variant="compact"
+                />
+              </div>
             </li>
           ))}
         </ul>
