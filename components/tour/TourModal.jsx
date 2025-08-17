@@ -239,10 +239,19 @@ export default function TourModal() {
       });
 
       console.log("Tour request result:", result);
-      toast({
-        title: "Tour Scheduled Successfully!",
-        description: `Your tour has been scheduled! Confirmation #${result.id}. We'll send you an email with the details shortly.`,
-      });
+
+      // Show success message with newsletter subscription info if applicable
+      if (values.marketingConsent) {
+        toast({
+          title: "Tour Scheduled Successfully!",
+          description: `Your tour has been scheduled! Confirmation #${result.id}. We'll send you an email with the details shortly. You've also been subscribed to our newsletter for updates about Silver Springs Residency.`,
+        });
+      } else {
+        toast({
+          title: "Tour Scheduled Successfully!",
+          description: `Your tour has been scheduled! Confirmation #${result.id}. We'll send you an email with the details shortly.`,
+        });
+      }
       closeTourModal();
     } catch (error) {
       console.error("Tour scheduling error:", error);
