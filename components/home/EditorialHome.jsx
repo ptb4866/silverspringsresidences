@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, HeartHandshake, Utensils, Sun } from "lucide-react";
+import { ArrowUpRight, Check, HeartHandshake, Utensils, Sun } from "lucide-react";
 import Hero from "./CinematicHero";
 import { useTourModal } from "@/hooks/use-tour-modal";
 
@@ -18,15 +18,16 @@ export default function Home() {
     <div className="home-page">
       <Hero />
       <section className="home-intro section-space site-container">
-        <p className="eyebrow">Welcome to Silver Springs Residency</p>
+        {/*<p className="eyebrow">Welcome to Silver Springs Residency</p> */}
         <h2>
           Exceptional care.
           <br />A familiar feeling.
         </h2>
         <p>
-          Life’s next chapter should feel like home. Our small residential
-          approach to assisted living brings personalized support, meaningful
-          connection, and everyday comfort together in Menifee, California.
+          Welcome to Silver Springs Residence, a boutique board and care home
+          for seniors. Our mission is to provide personalized care in a warm
+          home-like setting where seniors can live with comfort, dignity, and a
+          true sense of belonging.
         </p>
         <span className="intro-rule" aria-hidden="true" />
       </section>
@@ -54,25 +55,35 @@ export default function Home() {
           </div>
           <div className="residence-grid">
             <article className="residence-card">
-              <Link to="/contact-us/locations" className="residence-image">
-                <img
-                  src="/media/residence-exterior.webp"
-                  alt="Residential home exterior, from the Silver Springs image collection"
-                  width="900"
-                  height="600"
-                  loading="lazy"
-                />
-              </Link>
+              <div className="residence-collage">
+                <img className="residence-photo-main" src="/media/residence-exterior.webp" alt="Residential exterior illustration from the Silver Springs collection" width="900" height="600" loading="lazy" />
+                <img className="residence-photo-inset" src="/media/residence-living.webp" alt="Living-room illustration from the Silver Springs collection" width="900" height="600" loading="lazy" />
+              </div>
               <div className="residence-content">
                 <p className="eyebrow">Menifee, California</p>
-                <h3>Braverde House</h3>
+                <h3>Quality Care in a real home</h3>
                 <p>
-                  A comfortable residential setting with personalized support.
-                  Visit us at 32336 Parker Street.
+                  Silver Springs Residence offers a warm, residential
+                  alternative to large assisted living communities. With no more
+                  than six residents, our caregivers have the time to truly know
+                  each person, their routines, preferences, personality, and
+                  changing needs.
                 </p>
-                <EditorialLink to="/contact-us/locations">
-                  Discover Braverde
-                </EditorialLink>
+                <ul className="residence-benefits">
+                  {[
+                    "No more than 6 residents",
+                    "1:3 caregiver-to-resident ratio",
+                    "Consistent, familiar caregivers",
+                    "Personalized care tailored to each resident",
+                    "Home-cooked meals and daily support",
+                    "A calm, comfortable residential setting",
+                  ].map((benefit) => (
+                    <li key={benefit}><span className="benefit-check"><Check size={14} aria-hidden="true" /></span><span>{benefit}</span></li>
+                  ))}
+                </ul>
+                <button type="button" className="editorial-link residence-tour" onClick={openTourModal}>
+                  Schedule A Tour <ArrowUpRight size={18} aria-hidden="true" />
+                </button>
               </div>
             </article>
           </div>
@@ -97,20 +108,30 @@ export default function Home() {
           <span className="image-note">Care that feels personal.</span>
         </div>
         <div className="care-copy">
-          <p className="eyebrow">The support you need. The life you love.</p>
+          <p className="eyebrow">A More Personal Approach to Senior Living</p>
           <h2 id="care-heading">
-            A helping hand.
-            <br />A caring heart.
+            <span className="care-heading-first">Thoughtful Support in a Calm,</span>
+            <br />
+            Familiar Setting.
           </h2>
           <p>
-            Here, care begins with getting to know you. With just six bedrooms
-            in our home, our team can focus on each resident’s needs, routines,
-            and preferences.
+            Silver Springs Residence offers a more intimate alternative to large
+            senior living communities. Located in a peaceful Menifee
+            neighborhood with landscaped surroundings, sidewalks, and park
+            views, our residential care home is designed to provide comfort,
+            familiarity, and a genuine sense of belonging.
           </p>
           <p>
-            From assistance with daily living to caregivers available around the
-            clock, we offer support that makes space for comfort and
-            independence.
+            Our approach centers on dignity, consistency, and personal
+            connection. Residents receive attentive support shaped around their
+            routines, preferences, and individual needs, while families benefit
+            from open communication and visible owner involvement.
+          </p>
+          <p>
+            Convenient access to nearby hospitals, pharmacies, Interstate 215,
+            and surrounding Southwest Riverside County communities helps
+            residents remain close to essential services and the people who
+            matter most.
           </p>
           <EditorialLink to="/assisted-living">
             Our Approach to Care

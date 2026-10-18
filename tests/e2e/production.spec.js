@@ -6,7 +6,7 @@ test("production homepage and direct route loads serve the redesign", async ({ p
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("A little more care");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(/Where\s*Care\s*Feels\s*Like\s*Home/);
   await expect(page.locator(".hero-poster img")).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: testInfo.outputPath("homepage-preview.png") });

@@ -48,3 +48,7 @@ ffmpeg -ss 1 -i source.mp4 -t 12 -an -vf "setpts=1.35*PTS,scale=1280:-2" -r 24 -
 ```
 
 FFmpeg is a media preparation tool only; it is not required to install or run the site.
+
+## Logo icon and favicon
+
+The three-leaf and water-ripple SVG icon was recreated from the owner-supplied `Site Logo.jpg` reference. It retains the site wordmark typography and muted gold color. `public/favicon.svg`, PNG favicon, Apple touch icon, and ICO share that icon. The residence collage reuses the existing exterior and living-room illustrations listed above.

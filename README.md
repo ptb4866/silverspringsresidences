@@ -64,3 +64,7 @@ The homepage uses a mobile-first layout, a green/ivory/gold palette, Libre Baske
 Media sources, transformations, and licenses are documented in [public/media/SOURCES.md](public/media/SOURCES.md). Existing residence illustrations are not verified property photos; the homepage labels their source and encourages visitors to request current images.
 
 Optional development query tools can be enabled by setting `VITE_ENABLE_QUERY_DEVTOOLS=true` locally. They are excluded from production.
+
+## Adjusting the care heading
+
+In `styles/editorial.css`, the `.home-page #care-heading` rule sets `--care-heading-size: clamp(1.6rem, 2.1vw, 1.875rem)`. The three values are the minimum size, fluid viewport size, and maximum size. Lower them for smaller text or raise them for larger text. This changes only the “Thoughtful Support” heading; recheck its first-line fit at 768px and 1024px after enlarging it. The line can wrap when text is enlarged for accessibility.

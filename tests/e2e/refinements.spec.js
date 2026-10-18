@@ -24,7 +24,7 @@ test("only Braverde is advertised and its directions remain beneath the card", a
   await expect(page.locator(".residence-card")).toHaveCount(1);
   await expect(page.locator("main")).not.toContainText("Willow");
   await expect(page.locator("main")).not.toContainText("Two single-family");
-  await page.getByRole("link", { name: "Discover Braverde" }).click();
+  await page.goto("/contact-us/locations");
   await expect(page.locator("main h1")).toHaveText("Braverde House");
   await expect(page.locator("main")).not.toContainText("Getting Here");
   await expect(page.locator("main")).not.toContainText("Our Locations");

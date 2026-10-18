@@ -162,8 +162,8 @@ test("desktop menu and homepage links reach their destinations", async ({
     .getByRole("link", { name: "Explore Our Homes", exact: true })
     .click();
   await expect(page).toHaveURL(/#our-homes/);
-  await page.getByRole("link", { name: "Discover Braverde" }).click();
-  await expect(page).toHaveURL(/contact-us\/locations$/);
+  await page.locator(".residence-content").getByRole("button", { name: "Schedule A Tour" }).click();
+  await expect(page.getByRole("dialog", { name: "Schedule Your Tour" })).toBeVisible();
 });
 
 test("hero video plays locally and supports pause and resume", async ({
@@ -227,7 +227,7 @@ for (const fallback of [
       )
       .toBe(true);
     await expect(page.locator("video")).toHaveCount(0);
-    await expect(page.locator("main h1")).toContainText("A little more care");
+    await expect(page.locator("main h1")).toContainText(/Where\s*Care\s*Feels\s*Like\s*Home/);
   });
 }
 
