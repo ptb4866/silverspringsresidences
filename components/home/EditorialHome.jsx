@@ -51,13 +51,13 @@ export default function Home() {
                 <br className="desktop-break" /> of belonging.
               </h2>
             </div>
-            <p>
+            {/* <p>
               One welcoming residence.
               <br />
               Six private bedrooms.
               <br />
               One thoughtful approach to care.
-            </p>
+            </p> */}
           </div>
           <div className="residence-grid">
             <article className="residence-card">
@@ -116,10 +116,10 @@ export default function Home() {
               </div>
             </article>
           </div>
-          <p className="image-caption">
+          {/*<p className="image-caption">
             Residence imagery from our existing collection. Ask our team for
             current home photos and availability.
-          </p>
+          </p> */}
         </div>
       </section>
       <section
