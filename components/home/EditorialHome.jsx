@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, HeartHandshake, Utensils, Sun } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+  HeartHandshake,
+  Utensils,
+  Sun,
+} from "lucide-react";
 import Hero from "./CinematicHero";
 import { useTourModal } from "@/hooks/use-tour-modal";
 
@@ -56,8 +62,22 @@ export default function Home() {
           <div className="residence-grid">
             <article className="residence-card">
               <div className="residence-collage">
-                <img className="residence-photo-main" src="/media/residence-exterior.webp" alt="Residential exterior illustration from the Silver Springs collection" width="900" height="600" loading="lazy" />
-                <img className="residence-photo-inset" src="/media/residence-living.webp" alt="Living-room illustration from the Silver Springs collection" width="900" height="600" loading="lazy" />
+                <img
+                  className="residence-photo-main"
+                  src="/media/residence-exterior.webp"
+                  alt="Residential exterior illustration from the Silver Springs collection"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                />
+                <img
+                  className="residence-photo-inset"
+                  src="/media/residence-living.webp"
+                  alt="Living-room illustration from the Silver Springs collection"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                />
               </div>
               <div className="residence-content">
                 <p className="eyebrow">Menifee, California</p>
@@ -78,10 +98,19 @@ export default function Home() {
                     "Home-cooked meals and daily support",
                     "A calm, comfortable residential setting",
                   ].map((benefit) => (
-                    <li key={benefit}><span className="benefit-check"><Check size={14} aria-hidden="true" /></span><span>{benefit}</span></li>
+                    <li key={benefit}>
+                      <span className="benefit-check">
+                        <Check size={14} aria-hidden="true" />
+                      </span>
+                      <span>{benefit}</span>
+                    </li>
                   ))}
                 </ul>
-                <button type="button" className="editorial-link residence-tour" onClick={openTourModal}>
+                <button
+                  type="button"
+                  className="editorial-link residence-tour"
+                  onClick={openTourModal}
+                >
                   Schedule A Tour <ArrowUpRight size={18} aria-hidden="true" />
                 </button>
               </div>
@@ -110,7 +139,9 @@ export default function Home() {
         <div className="care-copy">
           <p className="eyebrow">A More Personal Approach to Senior Living</p>
           <h2 id="care-heading">
-            <span className="care-heading-first">Thoughtful Support in a Calm,</span>
+            <span className="care-heading-first">
+              Thoughtful Support in a Calm,
+            </span>
             <br />
             Familiar Setting.
           </h2>
@@ -137,9 +168,9 @@ export default function Home() {
             Our Approach to Care
           </EditorialLink>
           <div className="care-detail">
-            <span>06</span>
+            <span>1:3</span>
             <p>
-              Private bedrooms.
+              Caregiver-to-residence ratio.
               <br />
               More room for personal attention.
             </p>
