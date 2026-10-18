@@ -77,10 +77,11 @@ export default function Hero() {
       )}
       <div className="hero-shade" />
       <div className="site-container hero-content">
-        <p className="eyebrow">Personalized assisted living · Menifee, CA</p>
+        <p className="eyebrow">Boutique Assisted Living · Menifee, CA</p>
         <h1>
-          A little more care.
-          <br />A lot more <em>life.</em>
+          Where <em>Care</em> Feels
+          <br />
+          Like <em>Home.</em>
         </h1>
         <p className="hero-description">
           The comfort of home. The confidence of knowing
