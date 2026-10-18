@@ -4,16 +4,15 @@ import { Navigation, MapPin, Clock } from "lucide-react";
 
 export default function MapDirectionsHero() {
   return (
-    <section className="bg-gradient-to-br from-brand-light to-blue-50 py-16 lg:py-24">
+    <section className="bg-gradient-to-br from-brand-light to-white py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Map & <span className="text-brand-primary">Directions</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Find your way to Silver Springs Residency with our interactive maps
-            and detailed directions. We're conveniently located and easily
-            accessible from major highways and public transportation.
+            Find your way to Braverde House in Menifee. Use the map to
+            explore the area, or open directions to plan your visit.
           </p>
         </div>
 
@@ -35,10 +34,10 @@ export default function MapDirectionsHero() {
               <MapPin className="w-8 h-8 text-brand-primary" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Multiple Locations
+              Our Menifee Home
             </h3>
             <p className="text-gray-600">
-              Choose the location most convenient for you
+              Visit Braverde House at 32336 Parker Street
             </p>
           </div>
 
@@ -47,7 +46,7 @@ export default function MapDirectionsHero() {
               <Clock className="w-8 h-8 text-brand-primary" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Visit Anytime
+              Plan Your Visit
             </h3>
             <p className="text-gray-600">
               Tours available Monday through Friday, 9AM-5PM

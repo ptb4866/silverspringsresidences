@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
 export default function GalleryGrid() {
+  const previousFocus = useRef(null);
   const categories = [
     "All",
     "Braverde House",
@@ -112,17 +113,16 @@ export default function GalleryGrid() {
           {filteredPhotos.map((photo, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-lg shadow-md cursor-pointer"
-              onClick={() => setSelectedImage(photo.src)}
+              className="overflow-hidden rounded-lg shadow-md"
             >
-              <div className="relative h-64 md:h-80">
+              <button className="relative h-64 md:h-80 block w-full" onClick={(event) => { previousFocus.current = event.currentTarget; setSelectedImage(photo.src); }} aria-label={`Enlarge ${photo.alt}`}>
                 <Image
                   src={photo.src || "/placeholder.svg"}
                   alt={photo.alt}
                   fill
                   className="object-cover transition-transform duration-300 hover:scale-105"
                 />
-              </div>
+              </button>
               <div className="p-4 bg-white">
                 <p className="text-gray-700">{photo.alt}</p>
                 <p className="text-sm text-gray-500">{photo.category}</p>
@@ -136,9 +136,11 @@ export default function GalleryGrid() {
           open={!!selectedImage}
           onOpenChange={() => setSelectedImage(null)}
         >
-          <DialogContent className="max-w-5xl p-0 overflow-hidden bg-transparent border-none">
+          <DialogContent aria-describedby={undefined} onCloseAutoFocus={(event) => { event.preventDefault(); previousFocus.current?.focus(); }} className="max-w-5xl p-0 overflow-hidden bg-transparent border-none">
+            <DialogTitle className="sr-only">Photo gallery image</DialogTitle>
             <div className="relative">
               <button
+                aria-label="Close enlarged photo"
                 onClick={() => setSelectedImage(null)}
                 className="absolute top-2 right-2 p-2 bg-black bg-opacity-50 text-white rounded-full z-10"
               >

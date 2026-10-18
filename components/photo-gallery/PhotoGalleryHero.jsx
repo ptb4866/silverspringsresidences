@@ -16,7 +16,7 @@ export default function PhotoGalleryHero() {
           Photo Gallery
         </h1>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-          Take a virtual tour of our beautiful homes and amenities
+          Take a virtual tour of our home and amenities
         </p>
       </div>
     </section>

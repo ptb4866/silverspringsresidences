@@ -20,7 +20,7 @@ export default function LuxuryLiving() {
           </p>
 
           <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed">
-            With just six bedrooms in each home, we provide personalized care
+            With just six bedrooms in our home, we provide personalized care
             and attention to each resident. Our dedicated staff ensures that
             every individual receives the support they need while enjoying the
             warmth and comfort of a real home.

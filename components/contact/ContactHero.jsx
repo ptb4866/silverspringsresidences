@@ -1,23 +1,15 @@
 export default function ContactHero() {
   return (
-    <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-black">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/placeholder.svg?height=800&width=1600')",
-          opacity: 0.7,
-        }}
-      />
-
-      {/* Content Overlay */}
-      <div className="relative z-10 text-center text-white px-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-          Contact Us
-        </h1>
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-          We're here to answer your questions and help you find the perfect home
-        </p>
+    <section className="contact-hero">
+      <picture>
+        <source media="(max-width: 639px)" srcSet="/media/contact-care-mobile.webp" />
+        <img src="/media/contact-care.webp" alt="A caregiver spending time with an older adult indoors" width="1800" height="1200" fetchPriority="high" />
+      </picture>
+      <div className="contact-hero-shade" />
+      <div className="site-container contact-hero-copy">
+        <p className="eyebrow">Let's start a conversation</p>
+        <h1>Contact Us</h1>
+        <p>We're here to answer your questions and help you feel at home.</p>
       </div>
     </section>
   );

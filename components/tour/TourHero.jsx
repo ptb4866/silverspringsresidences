@@ -16,7 +16,7 @@ export default function TourHero() {
           Schedule a Tour
         </h1>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-          Visit our homes and see the Silver Springs difference in person
+          Visit our home and see the Silver Springs difference in person
         </p>
       </div>
     </section>

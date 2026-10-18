@@ -91,10 +91,10 @@ export default function TourInfo() {
             <div>
               <p className="font-medium">Questions? Call us:</p>
               <a
-                href="tel:+19512460108"
+                href="tel:+19512460895"
                 className="text-green-700 hover:text-green-800 transition-colors"
               >
-                (951) 246-0108
+                (951) 246 0895
               </a>
             </div>
           </div>

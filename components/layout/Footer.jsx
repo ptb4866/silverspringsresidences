@@ -133,10 +133,10 @@ export default function Footer() {
                   className="mr-3 text-green-500 flex-shrink-0"
                 />
                 <a
-                  href="tel:+19512460108"
+                  href="tel:+19512460895"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  (951) 246-0108
+                  (951) 246 0895
                 </a>
               </div>
               <div className="flex items-center">

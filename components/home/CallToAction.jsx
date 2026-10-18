@@ -14,7 +14,7 @@ export default function CallToAction() {
           Experience the Silver Springs Difference
         </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-          We invite you to visit our homes and see firsthand the warmth,
+          We invite you to visit our home and see firsthand the warmth,
           comfort, and exceptional care we provide.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">

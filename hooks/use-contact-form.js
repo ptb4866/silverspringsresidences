@@ -33,19 +33,20 @@ export function useContactForm() {
         if (emailError) {
           console.error("Email notification error:", emailError);
           throw new Error(
-            "Failed to send email notification. Please try again."
+            "Failed to send email notification. Please try again.",
           );
         }
 
         if (!emailData?.success) {
           console.error("Email sending failed:", emailData);
           throw new Error(
-            "Failed to send email notification. Please try again."
+            "Failed to send email notification. Please try again.",
           );
         }
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
-        throw new Error("Failed to send email notification. Please try again.");
+        // A notification failure must not turn a saved message into a failed
+        // submission, which could lead the visitor to send it twice.
       }
 
       return data;

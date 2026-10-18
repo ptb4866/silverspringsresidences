@@ -1,11 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import { supabase } from "@/lib/supabase";
+import { format } from "date-fns";
 
 export function useTourRequest() {
   return useMutation({
     mutationFn: async (tourData) => {
-      console.log("Tour request data:", tourData);
-
       const { data, error } = await supabase
         .from("tour_requests")
         .insert([
@@ -16,7 +15,7 @@ export function useTourRequest() {
             phone: tourData.phone,
             relationship: tourData.relationship,
             location: tourData.location,
-            tour_date: new Date(tourData.date).toISOString().split("T")[0],
+            tour_date: format(tourData.date, "yyyy-MM-dd"),
             time_slot: tourData.timeSlot,
             group_size: tourData.groupSize,
             interests: tourData.interests || [],
@@ -32,13 +31,9 @@ export function useTourRequest() {
         throw new Error(`Failed to schedule tour: ${error.message}`);
       }
 
-      console.log("Tour request saved to database:", data);
-
       // If marketing consent is given, add to newsletter subscription
       if (tourData.marketingConsent) {
         try {
-          console.log("Adding user to newsletter subscription...");
-
           // First, check if email already exists in newsletter subscribers
           const { data: existingSubscriber, error: checkError } = await supabase
             .from("newsletter_subscribers")
@@ -67,7 +62,7 @@ export function useTourRequest() {
               // 23505 is duplicate key error, which we can ignore
               console.error(
                 "Error inserting newsletter subscriber:",
-                insertError
+                insertError,
               );
             }
           }
@@ -81,14 +76,12 @@ export function useTourRequest() {
                 firstName: tourData.firstName,
                 lastName: tourData.lastName,
               },
-            }
+            },
           );
 
           if (resendError) {
             console.error("Error adding to Resend contacts:", resendError);
             // Don't throw error here as the tour request was successful
-          } else {
-            console.log("Successfully added to newsletter subscription");
           }
         } catch (newsletterError) {
           console.error("Newsletter subscription error:", newsletterError);
@@ -98,7 +91,6 @@ export function useTourRequest() {
 
       // Send email notification
       try {
-        console.log("Attempting to send email notification...");
         const { data: emailData, error: emailError } =
           await supabase.functions.invoke("send-tour-notification", {
             body: { tourData: data },
@@ -107,21 +99,20 @@ export function useTourRequest() {
         if (emailError) {
           console.error("Email notification error:", emailError);
           throw new Error(
-            "Failed to send email notification. Please try again."
+            "Failed to send email notification. Please try again.",
           );
         }
 
         if (!emailData?.success) {
           console.error("Email sending failed:", emailData);
           throw new Error(
-            "Failed to send email notification. Please try again."
+            "Failed to send email notification. Please try again.",
           );
         }
-
-        console.log("Email notification sent successfully:", emailData);
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
-        throw new Error("Failed to send email notification. Please try again.");
+        // The request is already saved. Do not encourage a duplicate submission
+        // if the separate notification service is unavailable.
       }
 
       return data;

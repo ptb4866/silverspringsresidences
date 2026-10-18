@@ -24,7 +24,6 @@ export default function AmenitiesList() {
         "Daily social activities and events",
         "Book and movie library",
         "Game and puzzle collection",
-        "Gardening opportunities",
         "Regular outings to local attractions",
         "Holiday and birthday celebrations",
         "Visiting entertainment",

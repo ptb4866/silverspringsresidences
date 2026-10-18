@@ -19,8 +19,8 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row justify-center gap-8 mb-10">
           <div className="flex items-center justify-center">
             <Phone size={24} className="mr-2" />
-            <a href="tel:+19512460108" className="text-xl hover:underline">
-              (951) 246-0108
+            <a href="tel:+19512460895" className="text-xl hover:underline">
+              (951) 246 0895
             </a>
           </div>
           <div className="flex items-center justify-center">

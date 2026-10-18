@@ -54,7 +54,7 @@ export default function LocationsHero() {
             <p className="text-gray-600">
               Call us to schedule a tour
               <br />
-              (951) 246-0108
+              (951) 246 0895
             </p>
           </div>
         </div>

@@ -17,6 +17,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Manrope", "Arial", "sans-serif"],
+        serif: ["Libre Baskerville", "Georgia", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,25 +56,18 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         green: {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
-          950: "#052e16",
+          50: "#f6f4ef", 100: "#eef0eb", 200: "#d8ded6",
+          300: "#bec9bd", 400: "#839780", 500: "#60775c",
+          600: "#837554", 700: "#34433f", 800: "#25332f",
+          900: "#202c27", 950: "#17211d",
         },
         // Custom brand colors
         brand: {
-          primary: "#577964", // Dark green
-          secondary: "#A7A936", // Olive green
-          accent: "#9FA133", // Light olive
-          dark: "#4D6A58", // Darker green
-          light: "#CFE2DC", // Light mint
+          primary: "#34433F",
+          secondary: "#837554",
+          accent: "#837554",
+          dark: "#25332F",
+          light: "#EEF0EB",
         },
         gray: {
           50: "#f9fafb",

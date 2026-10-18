@@ -13,7 +13,7 @@ export default function FAQs() {
     {
       question: "What levels of care do you provide?",
       answer:
-        "We provide personalized care for seniors who need assistance with activities of daily living, medication management, and general supervision. Our homes are ideal for those who need more support than independent living but don't require the intensive medical care of a nursing home.",
+        "We provide personalized care for seniors who need assistance with activities of daily living, medication management, and general supervision. Our home is ideal for those who need more support than independent living but don't require the intensive medical care of a nursing home.",
     },
     {
       question: "How do you determine the care each resident needs?",

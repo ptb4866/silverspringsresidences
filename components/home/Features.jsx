@@ -6,7 +6,7 @@ export default function Features() {
     {
       title: "Homelike Environment",
       description:
-        "Our two residential homes provide a warm, familiar setting that feels just like home.",
+        "Our residential home provides a warm, familiar setting that feels just like home.",
       image: "/cozy-senior-living-room.png",
     },
     {
