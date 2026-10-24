@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Wordmark from "./Wordmark";
 
 export default function Footer() {
+  const location = useLocation();
   return (
     <footer className="site-footer">
       <div className="site-container footer-grid">
@@ -20,13 +21,14 @@ export default function Footer() {
           <p className="eyebrow">Discover</p>
           <nav aria-label="Footer navigation">
             {[
+              ["About", "/about"],
               ["Assisted Living", "/assisted-living"],
               ["Services & Amenities", "/services-and-amenities"],
               ["Photo Gallery", "/photo-gallery"],
               ["Floor Plans", "/floor-plans"],
               ["Resources", "/blog"],
             ].map(([label, href]) => (
-              <Link key={href} to={href}>
+              <Link key={href} to={href} aria-current={location.pathname === href ? "page" : undefined}>
                 {label}
               </Link>
             ))}

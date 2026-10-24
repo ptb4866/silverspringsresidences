@@ -12,7 +12,7 @@ export default function ServiceDescription() {
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               At Silver Springs Residency, we've reimagined assisted living by
               creating real homes, not institutions. Our residential
-              home features 6 private bedrooms, creating an intimate
+              home accommodates up to six residents, creating an intimate
               environment where residents receive personalized care while
               enjoying the comfort of a true home.
             </p>

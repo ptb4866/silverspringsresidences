@@ -13,7 +13,7 @@ export default function FloorPlanDisplay() {
       name: "Braverde House",
       image: "/placeholder.svg?height=800&width=1200",
       description:
-        "Our Braverde House floor plan features 6 private bedrooms, each with en-suite bathrooms, arranged around spacious common areas designed for comfort and accessibility.",
+        "Braverde House accommodates up to six residents in private and shared rooms, arranged around comfortable common areas. Private rooms have access to shared accessible bathrooms; the shared room has a dedicated bathroom.",
     },
   };
 

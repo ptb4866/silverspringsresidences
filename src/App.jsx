@@ -24,6 +24,8 @@ import { QueryProvider } from "../components/QueryProvider";
 
 import Home from "../app/page";
 
+const About = lazy(() => import("../app/about/page"));
+
 const AssistedLiving = lazy(() => import("../app/assisted-living/page"));
 
 const Blog = lazy(() => import("../app/blog/page"));
@@ -86,6 +88,8 @@ export default function App() {
 
               <Routes>
                 <Route path="/" element={<Home />} />
+
+                <Route path="/about" element={<About />} />
 
                 <Route path="/assisted-living" element={<AssistedLiving />} />
 

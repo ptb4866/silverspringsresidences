@@ -159,7 +159,7 @@ test("desktop menu and homepage links reach their destinations", async ({
   await expect(page).toHaveURL(/floor-plans/);
   await page.goto("/");
   await page
-    .getByRole("link", { name: "Explore Our Homes", exact: true })
+    .getByRole("link", { name: "Explore Our Home", exact: true })
     .click();
   await expect(page).toHaveURL(/#our-homes/);
   await page.locator(".residence-content").getByRole("button", { name: "Schedule A Tour" }).click();

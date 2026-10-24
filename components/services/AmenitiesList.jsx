@@ -6,7 +6,7 @@ export default function AmenitiesList() {
       title: "Home Amenities",
       image: "/placeholder.svg?height=600&width=800",
       items: [
-        "Private bedrooms with en-suite bathrooms",
+        "Private rooms with shared accessible bathrooms; shared room with a dedicated bathroom",
         "Spacious common living areas",
         "Beautiful gardens and outdoor spaces",
         "Family-style dining room",

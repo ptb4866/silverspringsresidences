@@ -95,7 +95,7 @@ export default function Hero() {
             Schedule a Tour <ArrowUpRight size={17} aria-hidden="true" />
           </button>
           <a className="hero-explore" href="#our-homes">
-            Explore Our Homes <ArrowDown size={17} aria-hidden="true" />
+            Explore Our Home <ArrowDown size={17} aria-hidden="true" />
           </a>
         </div>
       </div>

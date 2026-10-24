@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContactForm } from "@/hooks/use-contact-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,6 +27,9 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
+  const availabilityMessage = "I would like to ask about current private or shared room availability at Braverde House. Please contact me with more information.";
+  const isAvailabilityInquiry = searchParams.get("inquiry") === "room-availability";
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -35,9 +39,15 @@ export default function ContactForm() {
       name: "",
       email: "",
       phone: "",
-      message: "",
+      message: isAvailabilityInquiry ? availabilityMessage : "",
     },
   });
+
+  useEffect(() => {
+    if (isAvailabilityInquiry && !form.getValues("message") && !form.getFieldState("message").isDirty) {
+      form.resetField("message", { defaultValue: availabilityMessage });
+    }
+  }, [isAvailabilityInquiry, form]);
 
   const contactForm = useContactForm();
 
@@ -69,7 +79,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md">
+    <div id="contact-form" className="bg-white p-8 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
         Send Us a Message
       </h2>

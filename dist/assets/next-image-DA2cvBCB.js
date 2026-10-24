@@ -1,0 +1,1 @@
+import{j as a}from"./index-CGsef9Bf.js";function j({src:t,alt:o="",width:i,height:e,fill:s,className:n,...r}){const m=s?{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover"}:void 0;return a.jsx("img",{src:t,alt:o,width:i,height:e,className:n,style:m,...r})}export{j as I};

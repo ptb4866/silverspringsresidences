@@ -18,7 +18,7 @@ const livingLinks = [
   ["Floor Plans", "/floor-plans"],
 ];
 const otherLinks = [
-  ["Our Homes", "/contact-us/locations"],
+  ["Our Home", "/contact-us/locations"],
   ["Resources", "/blog"],
   ["Contact Us", "/contact-us"],
 ];
@@ -54,6 +54,7 @@ export default function Header() {
       <div className="site-container header-main">
         <Wordmark />
         <nav className="desktop-nav" aria-label="Main navigation">
+          <Link to="/about" className="nav-link" aria-current={pathname === "/about" ? "page" : undefined}>About</Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="nav-link">
               Living Here <ChevronDown size={14} aria-hidden="true" />
@@ -112,7 +113,7 @@ export default function Header() {
               </div>
               <nav aria-label="Mobile navigation">
                 <p className="eyebrow">Life at Silver Springs</p>
-                {[...livingLinks, ...otherLinks].map(([name, href]) => (
+                {[["About", "/about"], ...livingLinks, ...otherLinks].map(([name, href]) => (
                   <Link
                     key={href}
                     to={href}

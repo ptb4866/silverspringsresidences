@@ -3,8 +3,8 @@ import { Check } from "lucide-react";
 
 export default function FloorPlanDetails() {
   const roomFeatures = [
-    "Private bedroom with ample space for personal furniture",
-    "En-suite bathroom with walk-in shower and safety features",
+    "Furnished private bedroom with space for appropriate personal belongings",
+    "Access to shared accessible bathrooms with safety features",
     "Individual climate control",
     "Cable TV and WiFi access",
     "Emergency call system",
@@ -51,7 +51,7 @@ export default function FloorPlanDetails() {
                 ))}
               </ul>
               <p className="mt-6 text-gray-600">
-                Each private room can be personalized with your own furniture
+                Each private room can be personalized with appropriate photographs, familiar belongings
                 and decorations to create a familiar, comfortable space.
               </p>
             </div>

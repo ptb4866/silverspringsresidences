@@ -19,7 +19,10 @@ test("production homepage and direct route loads serve the redesign", async ({ p
   await expect(page.locator(".contact-map")).toHaveAttribute("src", /32336%20Parker/);
   await expect(page.getByRole("button", { name: "Send Message", exact: true })).toHaveCSS("background-color", "rgb(131, 117, 84)");
   await page.goto("/contact-us/locations");
-  await expect(page.locator("main h1")).toHaveText("Braverde House");
+  await expect(page.locator("main h1")).toHaveText("Our Home");
   await expect(page.locator("main")).not.toContainText("Willow");
+  await page.goto("/about");
+  await expect(page.locator("main h1")).toHaveText("About Silver Springs Residence");
+  await expect(page.locator(".about-preparations li")).toHaveCount(10);
   expect(errors).toEqual([]);
 });

@@ -6,7 +6,7 @@ export default function Facilities() {
     {
       name: "Braverde House",
       features: [
-        "6 private bedrooms with en-suite bathrooms",
+        "Private and shared room options for up to six residents",
         "Spacious common living areas",
         "Wheelchair accessible throughout",
         "Beautiful garden and patio area",

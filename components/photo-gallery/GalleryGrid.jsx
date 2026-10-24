@@ -30,7 +30,7 @@ export default function GalleryGrid() {
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Private bedroom with en-suite bathroom",
+      alt: "Private room accommodation",
       category: "Bedrooms",
     },
     {

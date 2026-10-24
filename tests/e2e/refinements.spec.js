@@ -25,10 +25,10 @@ test("only Braverde is advertised and its directions remain beneath the card", a
   await expect(page.locator("main")).not.toContainText("Willow");
   await expect(page.locator("main")).not.toContainText("Two single-family");
   await page.goto("/contact-us/locations");
-  await expect(page.locator("main h1")).toHaveText("Braverde House");
+  await expect(page.locator("main h1")).toHaveText("Our Home");
   await expect(page.locator("main")).not.toContainText("Getting Here");
   await expect(page.locator("main")).not.toContainText("Our Locations");
-  await expect(page.locator("main").getByRole("button", { name: /Schedule/ })).toHaveCount(0);
+  await expect(page.locator("main").getByRole("button", { name: "Schedule a Private Tour", exact: true })).toHaveCount(3);
   const directions = page.locator("main").getByRole("link", { name: "Get Directions" });
   await expect(directions).toHaveAttribute("target", "_blank");
   await expect(directions).toHaveAttribute("rel", "noopener noreferrer");
