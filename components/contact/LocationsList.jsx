@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Check, House, MapPin, Phone, ShieldCheck, UsersRound, Tag } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useTourModal } from "@/hooks/use-tour-modal";
 import "@/styles/our-home.css";
@@ -248,6 +248,21 @@ export default function OurHome() {
           </div>
           <figure><img className="our-home-hero-photo" src="/media/residence-exterior.webp" alt="Illustrative residential exterior from the Silver Springs collection" width="900" height="600" fetchPriority="high" /><figcaption>Illustrative imagery. Contact our team for current Braverde home photographs.</figcaption></figure>
         </div>
+      </section>
+      <section className="our-home-info" aria-label="Our home at a glance">
+        <ul className="site-container our-home-info-grid">
+          {[
+            { Icon: UsersRound, title: "6 residents · 1:3 care ratio", detail: "Personalized support around the clock" },
+            { Icon: Tag, title: "From $4,700/month", detail: "Based on level of care" },
+            { Icon: House, title: "32336 Parker Street", detail: "Menifee, CA 92584" },
+            { Icon: ShieldCheck, title: "Licensed RCFE", detail: "California-licensed residential care" },
+          ].map(({ Icon, title, detail }) => (
+            <li className="our-home-info-item" key={title}>
+              <span className="our-home-info-icon" aria-hidden="true"><Icon size={20} /></span>
+              <div><h2>{title === "From $4,700/month" ? <>From $4,700/<wbr />month</> : title}</h2><p>{detail}</p></div>
+            </li>
+          ))}
+        </ul>
       </section>
       <section className="site-container section-space our-home-why" aria-labelledby="home-why">
         <div className="our-home-why-intro our-home-copy"><h2 id="home-why">Why Families Choose Silver Springs Residence</h2><Copy blocks={content.why} /></div>

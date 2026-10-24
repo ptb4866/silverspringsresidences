@@ -1,0 +1,1 @@
+import{ai as o,aj as r,E as u,r as n}from"./index-DFFmZRbB.js";function s(){const t=o(),a=r();return{push:e=>t(e),replace:e=>t(e,{replace:!0}),pathname:a.pathname}}function i(){const{openTourModal:t}=u(),a=s();return n.useEffect(()=>{const e=setTimeout(()=>{t(),a.replace("/")},0);return()=>clearTimeout(e)},[]),null}export{i as default};

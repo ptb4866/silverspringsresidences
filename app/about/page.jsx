@@ -84,8 +84,8 @@ const content = {
     }
   ],
   "licensingIntro": [
-    "Silver Springs Residence is completing the California licensing process to operate as a Residential Care Facility for the Elderly in Menifee.",
-    "Our licensing preparation includes the policies, training, safety planning, documentation, and operational standards required to provide residential senior care responsibly and within an approved scope of services."
+    "Silver Springs Residence is a California-licensed Residential Care Facility for the Elderly in Menifee.",
+    "Our operational commitments include the policies, training, safety planning, documentation, and standards required to provide residential senior care responsibly and within an approved scope of services."
   ],
   "preparations": [
     "Oversight by a California-certified RCFE administrator",
@@ -97,10 +97,10 @@ const content = {
     "Required insurance coverage",
     "Policies supporting resident rights, privacy, dignity, and personal choice",
     "Compliance with California Department of Social Services requirements",
-    "Readiness for licensing review, inspection, and regulatory oversight"
+    "Readiness for ongoing regulatory review and oversight"
   ],
   "licensingClosing": [
-    "We will publish our license number and active licensing status once issued by the California Department of Social Services.",
+    "Contact our team for licensing details.",
     "We will never promise services that we are not prepared, staffed, or authorized to provide."
   ],
   "commitment": [
@@ -161,9 +161,9 @@ export default function AboutPage() {
       <section className="about-tinted section-space" aria-labelledby="about-licensing-heading">
         <div className="site-container about-reading about-copy">
           <h2 id="about-licensing-heading">Licensing &amp; Credentials</h2>
-          <p className="about-subtitle">Prepared to Serve Responsibly</p>
+          <p className="about-subtitle">Committed to Serving Responsibly</p>
           <Paragraphs paragraphs={content.licensingIntro} />
-          <p>Our preparations include:</p>
+          <p>Our ongoing commitments include:</p>
           <ul className="about-preparations">{content.preparations.map(text => <li key={text}>{text}</li>)}</ul>
           <Paragraphs paragraphs={content.licensingClosing} />
         </div>

@@ -16,8 +16,8 @@ for (const width of [320,375,768,1024,1440]) {
     for(const title of headings) await expect(page.getByRole('heading',{name:title,exact:true})).toBeVisible();
     await expect(page.locator('.about-page ul')).toHaveCount(1);
     await expect(page.locator('.about-preparations li')).toHaveCount(10);
-    await expect(page.locator('.about-page')).toContainText('is completing the California licensing process');
-    await expect(page.locator('.about-page')).toContainText('We will publish our license number and active licensing status once issued');
+    await expect(page.locator('.about-page')).toContainText('is a California-licensed Residential Care Facility for the Elderly');
+    await expect(page.locator('.about-page')).toContainText('Contact our team for licensing details.');
     for(const img of await page.locator('.about-page img').all()) {
       await img.scrollIntoViewIfNeeded();
       await expect.poll(()=>img.evaluate(e=>e.complete&&e.naturalWidth>0)).toBe(true);
