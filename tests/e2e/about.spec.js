@@ -36,7 +36,7 @@ test('About navigation order, current-page indicators, and closing links work',a
   await page.setViewportSize({width:1440,height:900});await page.goto('/');
   const nav=page.getByRole('navigation',{name:'Main navigation',exact:true});
   await expect(nav.locator(':scope > :first-child')).toHaveText('About');
-  await expect(nav.locator(':scope > :nth-child(2)')).toContainText('Living Here');
+  await expect(nav.locator(':scope > :nth-child(2)')).toContainText('Services');
   await nav.getByRole('link',{name:'About',exact:true}).click();
   await expect(page).toHaveURL(/\/about$/);
   await expect(nav.getByRole('link',{name:'About',exact:true})).toHaveAttribute('aria-current','page');

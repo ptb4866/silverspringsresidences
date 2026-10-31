@@ -1,0 +1,1 @@
+import{d as a,e as u,u as r,r as n}from"./index-P-OndIXJ.js";function s(){const t=a(),o=u();return{push:e=>t(e),replace:e=>t(e,{replace:!0}),pathname:o.pathname}}function l(){const{openTourModal:t}=r(),o=s();return n.useEffect(()=>{const e=setTimeout(()=>{t(),o.replace("/")},0);return()=>clearTimeout(e)},[]),null}export{l as default};

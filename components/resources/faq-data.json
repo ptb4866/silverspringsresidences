@@ -1,0 +1,499 @@
+{
+  "categories": [
+    "About Residential Care",
+    "Care & Support",
+    "Rooms & Daily Life",
+    "Pricing & Admission",
+    "Licensing & Choosing a Home"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": 0,
+      "question": "What is an RCFE?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A Residential Care Facility for the Elderly, or RCFE, is a California-licensed residential setting that provides 24-hour nonmedical care and supervision, primarily for adults age 60 and older."
+        },
+        {
+          "type": "p",
+          "text": "RCFEs may provide housing, meals, personal-care assistance, medication assistance, activities, supervision, and other daily support."
+        },
+        {
+          "type": "p",
+          "text": "You may also hear RCFEs referred to as assisted living facilities, residential care homes, or board-and-care homes."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": 0,
+      "question": "What is a six-bed RCFE or board-and-care home?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A six-bed RCFE is a smaller residential care home licensed to serve up to six residents."
+        },
+        {
+          "type": "p",
+          "text": "Unlike a large assisted-living community with dozens or hundreds of residents, a small residential home offers a more intimate setting with familiar living spaces and a smaller resident population."
+        },
+        {
+          "type": "p",
+          "text": "Silver Springs Residence is a six-resident RCFE in Menifee, California."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": 0,
+      "question": "What is the difference between board and care and assisted living?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Both can operate as RCFEs in California and are subject to state licensing requirements."
+        },
+        {
+          "type": "p",
+          "text": "The main difference is often the size and setting."
+        },
+        {
+          "type": "p",
+          "text": "Board-and-care homes are commonly located in residential neighborhoods and often serve about four to six residents. Larger assisted-living communities may serve dozens or hundreds of residents and typically offer more extensive communal amenities."
+        },
+        {
+          "type": "p",
+          "text": "Neither option is automatically better. The right choice depends on the resident’s care needs, personality, preferred environment, budget, and family priorities."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": 0,
+      "question": "How is an RCFE different from a nursing home?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An RCFE provides nonmedical care and supervision rather than continuous skilled nursing care."
+        },
+        {
+          "type": "p",
+          "text": "RCFEs can assist with activities such as bathing, dressing, grooming, meals, medication assistance, mobility, supervision, and companionship."
+        },
+        {
+          "type": "p",
+          "text": "A skilled nursing facility provides a higher level of ongoing medical and nursing care."
+        },
+        {
+          "type": "p",
+          "text": "Before admission, Silver Springs Residence reviews each prospective resident’s needs to determine whether they can be safely and appropriately supported in our residential setting."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": 1,
+      "question": "What types of care does Silver Springs Residence provide?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Care is based on each resident’s individual assessment and personalized care plan."
+        },
+        {
+          "type": "p",
+          "text": "Depending on the resident’s needs, support may include:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Bathing",
+            "Dressing and grooming",
+            "Toileting and continence support",
+            "Medication assistance",
+            "Mobility and transfer assistance",
+            "Eating and hydration support",
+            "Laundry and housekeeping",
+            "Supervision and companionship",
+            "Coordination with families and outside providers"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Our goal is to provide appropriate support while preserving dignity, choice, and as much independence as possible."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": 1,
+      "question": "Do you create personalized care plans?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yes."
+        },
+        {
+          "type": "p",
+          "text": "Before and during residency, we consider each person’s abilities, routines, preferences, mobility, personal-care needs, communication style, dietary needs, sleep habits, and other factors that may affect daily care."
+        },
+        {
+          "type": "p",
+          "text": "The goal is not to make every resident follow the same routine. Care should reflect the individual whenever safely and reasonably possible."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": 1,
+      "question": "Can Silver Springs Residence care for someone with dementia or memory loss?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Silver Springs Residence may support residents experiencing memory loss, mild cognitive impairment, or dementia when their individual needs can be safely met within our residential setting."
+        },
+        {
+          "type": "p",
+          "text": "Support may include familiar routines, calm communication, reminders, redirection, meaningful activities, supervision, and personalized comfort strategies."
+        },
+        {
+          "type": "p",
+          "text": "Dementia-related needs are evaluated individually before admission and as needs change."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": 1,
+      "question": "Can someone with limited mobility or a wheelchair live at Silver Springs Residence?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Potentially, yes."
+        },
+        {
+          "type": "p",
+          "text": "Silver Springs Residence is a single-story home with wheelchair accessibility and ADA-compliant bathrooms."
+        },
+        {
+          "type": "p",
+          "text": "However, mobility needs vary considerably. Before admission, we evaluate factors such as walking ability, transfers, wheelchair use, equipment needs, fall risk, and emergency evacuation requirements to determine whether we can safely provide the necessary support."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": 1,
+      "question": "Can you assist with medications?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "RCFEs may assist residents with medications within California regulations and the resident’s physician-directed care plan."
+        },
+        {
+          "type": "p",
+          "text": "This generally involves assistance with self-administered medications, rather than providing the same level of medication administration or medical treatment available in a skilled nursing facility."
+        },
+        {
+          "type": "p",
+          "text": "Medication needs are reviewed before admission so that appropriate arrangements can be established."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": 1,
+      "question": "Can a resident receive hospice care while living at Silver Springs Residence?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Potentially."
+        },
+        {
+          "type": "p",
+          "text": "California allows hospice services to be provided in an RCFE when applicable licensing requirements are met and care is provided by a licensed hospice agency."
+        },
+        {
+          "type": "p",
+          "text": "Whether a particular resident can remain at Silver Springs Residence while receiving hospice services depends on the resident’s needs, the facility’s approved capabilities, and applicable regulatory requirements."
+        },
+        {
+          "type": "p",
+          "text": "Families should discuss hospice needs with us before admission or whenever a resident’s condition changes."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": 2,
+      "question": "Do you offer private and shared rooms?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yes."
+        },
+        {
+          "type": "p",
+          "text": "Silver Springs Residence offers both private and shared furnished accommodations, subject to current availability."
+        },
+        {
+          "type": "p",
+          "text": "Families are encouraged to tour available rooms in person so they can better understand the layout, furnishings, accessibility, and overall environment."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": 2,
+      "question": "Are the rooms furnished?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yes."
+        },
+        {
+          "type": "p",
+          "text": "Resident rooms are furnished, providing a comfortable starting point for move-in."
+        },
+        {
+          "type": "p",
+          "text": "Residents may also be able to bring approved personal belongings, photographs, bedding, decorations, and selected furnishings to help their room feel familiar and personal."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": 2,
+      "question": "What meals and snacks are provided?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Residents receive regular meals along with appropriate snacks and beverages throughout the day."
+        },
+        {
+          "type": "p",
+          "text": "Meal planning may consider:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Resident preferences",
+            "Physician-directed dietary instructions",
+            "Allergies and sensitivities",
+            "Cultural or religious preferences",
+            "Texture or consistency needs",
+            "Hydration needs",
+            "Assistance required during meals"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Families are also encouraged to share favorite foods, family recipes, and familiar meal preferences."
+        },
+        {
+          "type": "action",
+          "label": "Download Our Sample Menu",
+          "to": "/media/sample-menu.pdf"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": 2,
+      "question": "What activities are available?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Activities are shaped around resident interests, abilities, preferences, and energy levels."
+        },
+        {
+          "type": "p",
+          "text": "Examples may include:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Music",
+            "Games and puzzles",
+            "Reading",
+            "Conversation",
+            "Light exercise or movement",
+            "Outdoor relaxation",
+            "Gardening",
+            "Movies",
+            "Creative activities",
+            "Family visits",
+            "Holiday and birthday celebrations",
+            "Personal hobbies"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Because Silver Springs is a smaller home, activities do not need to revolve around a large institutional calendar. Quiet time and familiar daily routines are equally respected."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": 2,
+      "question": "Can families visit?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yes."
+        },
+        {
+          "type": "p",
+          "text": "Family connection is an important part of residential life."
+        },
+        {
+          "type": "p",
+          "text": "Families are encouraged to remain involved through appropriate visits, celebrations, familiar activities, photographs, traditions, and communication with the care team."
+        },
+        {
+          "type": "p",
+          "text": "Specific visiting arrangements may depend on resident preference, safety considerations, and facility policies."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": 3,
+      "question": "How much does board and care cost at Silver Springs Residence?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Monthly pricing depends on the room selected and the resident’s assessed care needs."
+        },
+        {
+          "type": "p",
+          "text": "Silver Springs Residence offers private and shared accommodations, with final care pricing determined following an assessment."
+        },
+        {
+          "type": "p",
+          "text": "Families receive information about applicable rates, included services, and potential additional care charges before admission so they can understand the expected cost before making a commitment."
+        },
+        {
+          "type": "action",
+          "label": "Request Current Pricing",
+          "to": "/contact-us#contact-form"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": 3,
+      "question": "What is included in the monthly rate?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Included services depend on the resident agreement and individual care plan, but residential care commonly includes accommodations, meals and snacks, personal-care assistance, housekeeping, laundry, activities, supervision, and appropriate medication assistance."
+        },
+        {
+          "type": "p",
+          "text": "Some residents may require additional services or higher levels of assistance that affect pricing."
+        },
+        {
+          "type": "p",
+          "text": "Before admission, Silver Springs Residence provides families with a clear explanation of services and applicable fees."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": 3,
+      "question": "How does the admission process work?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The process generally begins with a conversation about your loved one’s current situation and care needs."
+        },
+        {
+          "type": "p",
+          "text": "The next steps may include:"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Initial conversation",
+            "Private tour",
+            "Resident assessment",
+            "Review of care compatibility",
+            "Pricing and room selection",
+            "Required medical and admission documentation",
+            "Resident agreement",
+            "Personalized move-in plan"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "We only recommend admission when we believe Silver Springs Residence can safely and appropriately meet the prospective resident’s needs."
+        },
+        {
+          "type": "action",
+          "label": "Learn What to Expect",
+          "to": "/what-to-expect"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": 4,
+      "question": "How can I verify that an RCFE is licensed in California?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "California RCFEs are licensed by the California Department of Social Services, Community Care Licensing Division."
+        },
+        {
+          "type": "p",
+          "text": "Families can use the state’s Facility Search website to review licensing information and available inspection reports."
+        },
+        {
+          "type": "p",
+          "text": "We encourage families to verify licensing information for any residential care home they are considering—not just Silver Springs Residence."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": 4,
+      "question": "What should I look for when choosing a board-and-care home?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Look beyond photographs and marketing materials."
+        },
+        {
+          "type": "p",
+          "text": "During a visit, consider:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Whether the facility is properly licensed",
+            "Cleanliness and condition of the home",
+            "Resident rooms and bathrooms",
+            "Accessibility and safety",
+            "Staffing and supervision",
+            "Medication procedures",
+            "Meals and dietary support",
+            "Emergency planning",
+            "Activities and daily routines",
+            "Family communication",
+            "Pricing and additional fees",
+            "How changing care needs are handled"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Most importantly, ask whether the home can safely meet your loved one’s specific needs."
+        },
+        {
+          "type": "p",
+          "text": "California Community Care Licensing also encourages families to visit facilities in person and review current licensing information before making a decision."
+        }
+      ]
+    }
+  ]
+}

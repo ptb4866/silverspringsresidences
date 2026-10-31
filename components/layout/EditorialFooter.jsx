@@ -17,23 +17,12 @@ export default function Footer() {
             Menifee, California.
           </p>
         </div>
-        <div>
-          <p className="eyebrow">Discover</p>
-          <nav aria-label="Footer navigation">
-            {[
-              ["About", "/about"],
-              ["Assisted Living", "/assisted-living"],
-              ["Services & Amenities", "/services-and-amenities"],
-              ["Photo Gallery", "/photo-gallery"],
-              ["Floor Plans", "/floor-plans"],
-              ["Resources", "/blog"],
-            ].map(([label, href]) => (
-              <Link key={href} to={href} aria-current={location.pathname === href ? "page" : undefined}>
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+        <nav className="footer-link-groups" aria-label="Footer navigation">
+          {[
+            ["Discover", [["Blog", "/blog"], ["Why Us", "/why-us"], ["What to Expect", "/what-to-expect"], ["About", "/about"], ["Our Home", "/contact-us/locations"]]],
+            ["Services & Resources", [["Care", "/care"], ["Dining", "/dining"], ["Activities", "/activities"], ["FAQ", "/resources/faq"], ["Family Guides", "/resources/family-guides"]]],
+          ].map(([title, links]) => <div key={title} role="group" aria-label={title}><p className="eyebrow">{title}</p>{links.map(([label, href]) => <Link key={href} to={href} aria-current={location.pathname === href ? "page" : undefined}>{label}</Link>)}</div>)}
+        </nav>
         <div>
           <p className="eyebrow">Let’s connect</p>
           <div className="footer-contact">

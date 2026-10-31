@@ -34,20 +34,19 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "Assisted Living", href: "/assisted-living" },
-    { name: "Photo Gallery", href: "/photo-gallery" },
-    { name: "Floor Plans", href: "/floor-plans" },
+    { name: "Assisted Living", href: "/care" },
+    { name: "Floor Plans", href: "/contact-us/locations#home-rooms" },
     {
       name: "Services and Amenities",
-      href: "/services-and-amenities",
+      href: "/care",
       dropdown: [
         {
           name: "Care Services",
-          href: "/services-and-amenities#care-services",
+          href: "/care",
         },
         {
           name: "Community Amenities",
-          href: "/services-and-amenities#amenities",
+          href: "/care",
         },
       ],
     },

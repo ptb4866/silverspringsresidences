@@ -164,7 +164,7 @@ export default function Home() {
             residents remain close to essential services and the people who
             matter most.
           </p>
-          <EditorialLink to="/assisted-living">
+          <EditorialLink to="/care">
             Our Approach to Care
           </EditorialLink>
           <div className="care-detail">
@@ -229,8 +229,8 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              <EditorialLink to="/services-and-amenities">
-                Explore Services & Amenities
+              <EditorialLink to="/care">
+                Explore Our Care
               </EditorialLink>
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function Hero() {
                 Schedule a Tour
               </Button>
 
-              <Link href="/assisted-living">
+              <Link href="/care">
                 <Button
                   variant="outline"
                   className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 bg-transparent"

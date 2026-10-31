@@ -45,9 +45,9 @@ for (const width of [320, 375, 768, 1024, 1440]) {
     expect(await strip.evaluate(e => e.getBoundingClientRect().height)).toBeLessThan(previousHeights[width]);
     await strip.scrollIntoViewIfNeeded();
     await strip.screenshot({ path: testInfo.outputPath('facts.png'), style: '.site-header, .skip-link { visibility: hidden !important; }' });
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.evaluate(() => document.documentElement.style.fontSize = '150%');
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     for (const item of await items.all()) expect(await item.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
     await strip.screenshot({ path: testInfo.outputPath('facts-enlarged.png'), style: '.site-header, .skip-link { visibility: hidden !important; }' });
     expect(errors).toEqual([]);

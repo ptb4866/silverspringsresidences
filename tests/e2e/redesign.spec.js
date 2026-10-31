@@ -13,10 +13,9 @@ test.beforeEach(async ({ page }) => {
 
 const routes = [
   "/",
-  "/assisted-living",
-  "/services-and-amenities",
-  "/photo-gallery",
-  "/floor-plans",
+  "/care",
+  "/dining",
+  "/activities",
   "/contact-us",
   "/contact-us/locations",
   "/contact-us/map-directions",
@@ -124,9 +123,9 @@ test("mobile navigation closes on selection and Escape, and tour dialog restores
   await menu.click();
   await page
     .getByRole("navigation", { name: "Mobile navigation" })
-    .getByRole("link", { name: "Photo Gallery", exact: true })
+    .getByRole("link", { name: "Our Home", exact: true })
     .click();
-  await expect(page).toHaveURL(/photo-gallery/);
+  await expect(page).toHaveURL(/contact-us\/locations/);
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await menu.click();
   await page.keyboard.press("Escape");
@@ -154,9 +153,9 @@ test("desktop menu and homepage links reach their destinations", async ({
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/");
-  await page.getByRole("button", { name: "Living Here" }).click();
-  await page.getByRole("menuitem", { name: "Floor Plans" }).click();
-  await expect(page).toHaveURL(/floor-plans/);
+  await page.getByRole("button", { name: "Services" }).click();
+  await page.getByRole("menuitem", { name: "Care" }).click();
+  await expect(page).toHaveURL(/\/care$/);
   await page.goto("/");
   await page
     .getByRole("link", { name: "Explore Our Home", exact: true })
@@ -233,20 +232,20 @@ for (const fallback of [
 
 test("gallery images open from the keyboard and close with Escape", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto("/photo-gallery");
-  const photo = page.getByRole("button", { name: /Enlarge Exterior view/ });
+  await page.goto("/contact-us/locations");
+  const photo = page.getByRole("button", { name: "Enlarge Residential exterior illustration", exact: true });
   await photo.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("dialog", { name: "Photo gallery image" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "Residential exterior illustration" })).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(photo).toBeFocused();
 });
 
-test("testimonial selection keeps inner pages within the mobile viewport", async ({ page }) => {
+test("service content stays within the mobile viewport after navigation", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto("/services-and-amenities");
-  await page.getByRole("button", { name: "Go to testimonial 2" }).click();
-  await expect(page.getByRole("button", { name: "Go to testimonial 2" })).toHaveAttribute("aria-pressed", "true");
+  await page.goto("/care");
+  await page.getByRole("navigation", { name: "Footer navigation" }).getByRole("link", { name: "Activities", exact: true }).click();
+  await expect(page.locator("main h1")).toHaveText("Meaningful Days at a Comfortable Pace");
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 

@@ -52,3 +52,20 @@ FFmpeg is a media preparation tool only; it is not required to install or run th
 ## Logo icon and favicon
 
 The three-leaf and water-ripple SVG icon was recreated from the owner-supplied `Site Logo.jpg` reference. It retains the site wordmark typography and muted gold color. `public/favicon.svg`, PNG favicon, Apple touch icon, and ICO share that icon. The residence collage reuses the existing exterior and living-room illustrations listed above.
+
+## Services page photography (October 24, 2026)
+
+All four new images use the Pexels License (https://www.pexels.com/license/), reviewed October 24, 2026. Commercial use and modification are permitted; no endorsement is implied. These stock images do not depict Silver Springs residents, staff, meals, or property.
+
+| Local file | Creator | Source |
+| --- | --- | --- |
+| `dining-together.webp` | Mike Jones | https://www.pexels.com/photo/an-elderly-couple-sitting-at-a-table-8805842/ |
+| `dining-gathering.webp` | Alena Darmel | https://www.pexels.com/photo/elderly-people-having-a-gathering-8153746/ |
+| `activities-movement.webp` | Barbara Olsen | https://www.pexels.com/photo/an-elderly-man-doing-exercise-on-the-street-7870244/ |
+| `activities-reading.webp` | cottonbro studio | https://www.pexels.com/photo/elderly-woman-wearing-eyeglasses-5959754/ |
+
+Original images: `https://images.pexels.com/photos/{photo-id}/pexels-photo-{photo-id}.jpeg`. Locally resized to at most 1500 x 1200 pixels and encoded as WebP quality 82. New pages also reuse the licensed contact caregiving photo and painting-video poster documented above.
+
+## Temporary sample menu
+
+`sample-menu.pdf` is an original illustrative seven-day example, created for this site. It is not a current meal schedule or an approved medical diet. Fonts are the same open-source Manrope and Libre Baskerville used by the site. Replace this file with the owner's final menu at the same path when available.

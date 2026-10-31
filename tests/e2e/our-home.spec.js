@@ -23,14 +23,14 @@ test('Our Home navigation, all tour buttons, gallery, and directions work',async
  const photo=page.getByRole('button',{name:'Enlarge Residential exterior illustration',exact:true});await photo.focus();await page.keyboard.press('Enter');await expect(page.getByRole('dialog',{name:'Residential exterior illustration'})).toBeVisible();await page.keyboard.press('Escape');await expect(photo).toBeFocused();
  const directions=page.locator('main').getByRole('link',{name:'Get Directions',exact:true});await expect(directions).toHaveAttribute('rel','noopener noreferrer');expect(new URL(await directions.getAttribute('href')).searchParams.get('destination')).toBe('32336 Parker Street, Menifee, CA 92584');
  await expect(page.locator('main a[href="tel:+19512460895"]')).toContainText('(951) 246 0895');
- await page.getByRole('link',{name:'View Full Gallery',exact:true}).click();await expect(page).toHaveURL(/\/photo-gallery$/);
+ await expect(page.getByRole('link',{name:'View Full Gallery',exact:true})).toHaveCount(0);
 });
-test('activities and dining navigate to the relevant service cards',async({page})=>{
- for(const [name,id,title] of [['Explore Our Activities','daily-activities','Daily Activities'],['Learn About Dining','dining','Nutritious Meals & Snacks']]) {
-  await page.goto(home);await page.getByRole('link',{name,exact:true}).click();await expect(page).toHaveURL(new RegExp('/services-and-amenities#'+id+'$'));await expect(page.locator('#'+id)).toContainText(title);
-  await expect.poll(()=>page.locator('#'+id).evaluate(e=>{const r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight;})).toBe(true);
+test('activities and dining navigate to their dedicated pages',async({page})=>{
+ for(const [name,route,title] of [['Explore Our Activities','/activities','Meaningful Days at a Comfortable Pace'],['Learn About Dining','/dining','Dining That Feels Familiar']]) {
+  await page.goto(home);await page.getByRole('link',{name,exact:true}).click();await expect(page).toHaveURL(new RegExp(route+'$'));await expect(page.locator('main h1')).toHaveText(title);
  }
 });
+
 test('availability buttons prefill only the supported inquiry and preserve edits',async({page})=>{
  await page.goto(home);const links=page.locator('main a[href="'+availability+'"]');await expect(links).toHaveCount(3);
  for(const link of await links.all())await expect(link).toHaveAttribute('href',availability);
@@ -52,6 +52,6 @@ for(const outcome of ['success','database failure','notification failure']) {
  });
 }
 test('room descriptions agree across related pages and About is retained',async({page})=>{
- for(const route of ['/floor-plans','/services-and-amenities','/assisted-living']){await page.goto(route);await expect(page.locator('main h1')).toBeVisible();await expect(page.locator('main')).not.toContainText('en-suite');await expect(page.locator('main')).not.toContainText('6 private bedrooms');}
+ for(const route of ['/contact-us/locations','/care','/dining']){await page.goto(route);await expect(page.locator('main h1')).toBeVisible();await expect(page.locator('main')).not.toContainText('en-suite');await expect(page.locator('main')).not.toContainText('6 private bedrooms');}
  await page.goto('/about');await expect(page.locator('main h1')).toHaveText('About Silver Springs Residence');
 });

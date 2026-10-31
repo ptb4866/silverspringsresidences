@@ -985,3 +985,25 @@ main > div:not(.home-page) h1 {
   .mobile-menu-trigger { display: inline-flex; }
   .desktop-nav { display: none; }
 }
+
+/* Services navigation shares the same behavior before any lazy page loads. */
+.nav-link[data-current] { color: var(--gold); }
+.mobile-services { padding-top: 1.25rem; }
+.mobile-services .eyebrow { margin-bottom: .5rem; }
+.mobile-services > a { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 52px; border-bottom: 1px solid #e2ded4; padding-left: 1rem; font-size: .875rem; }
+.mobile-services > a[aria-current="page"] { color: var(--gold); }
+@media (min-width: 1280px) {
+  .desktop-nav { gap: 1.25rem; flex-shrink: 0; white-space: nowrap; }
+  .header-main[data-compact] .desktop-nav { display: flex; position: fixed; left: -10000px; width: max-content; visibility: hidden; pointer-events: none; }
+  .header-main[data-compact] .mobile-menu-trigger { display: inline-flex; }
+}
+/* Keep footer destinations visible as direct links in two named groups. */
+.site-footer .footer-link-groups { display: grid; grid-template-columns: minmax(0,1fr); gap: 2rem; min-width: 0; }
+.footer-link-groups > div { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.site-footer nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .25em; }
+@media (min-width: 640px) {
+  .site-footer .footer-link-groups { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1.6fr 1.2fr; gap: 2.5rem; }
+}

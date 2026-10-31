@@ -37,7 +37,7 @@ test("only Braverde is advertised and its directions remain beneath the card", a
 });
 
 test("business telephone and amenities are current", async ({ page }) => {
-  for (const route of ["/", "/contact-us", "/contact-us/locations", "/contact-us/map-directions", "/services-and-amenities"]) {
+  for (const route of ["/", "/contact-us", "/contact-us/locations", "/contact-us/map-directions", "/care"]) {
     await page.goto(route);
     await expect(page.locator("main h1")).toBeVisible();
     if (route === "/contact-us/map-directions") await expect(page.getByText("Select Location", { exact: true })).toBeVisible();

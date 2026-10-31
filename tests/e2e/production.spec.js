@@ -11,10 +11,16 @@ test("production homepage and direct route loads serve the redesign", async ({ p
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: testInfo.outputPath("homepage-preview.png") });
   await expect(page.getByRole("button", { name: "Open Tanstack query devtools" })).toHaveCount(0);
-  await page.goto("/assisted-living");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Assisted Living");
+  for (const [route,title] of [["/care","Personalized Care That Starts With Knowing the Person"],["/dining","Dining That Feels Familiar"],["/activities","Meaningful Days at a Comfortable Pace"]]) {
+    await page.goto(route);
+    await expect(page.locator("main h1")).toHaveText(title);
+  }
+  const menu = await page.request.get('/media/sample-menu.pdf');
+  expect(menu.ok()).toBe(true);
+  expect((await menu.body()).subarray(0,4).toString()).toBe('%PDF');
   await page.goto("/photo-gallery");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Photo Gallery");
+  await expect(page).toHaveURL(/contact-us\/locations#home-gallery$/);
+  await expect(page.locator("main h1")).toHaveText("Our Home");
   await page.goto("/contact-us");
   await expect(page.locator(".contact-map")).toHaveAttribute("src", /32336%20Parker/);
   await expect(page.getByRole("button", { name: "Send Message", exact: true })).toHaveCSS("background-color", "rgb(131, 117, 84)");
@@ -24,5 +30,9 @@ test("production homepage and direct route loads serve the redesign", async ({ p
   await page.goto("/about");
   await expect(page.locator("main h1")).toHaveText("About Silver Springs Residence");
   await expect(page.locator(".about-preparations li")).toHaveCount(10);
+  for (const [route,title] of [["/resources/faq","Frequently Asked Questions About Residential Care in Menifee"],["/resources/family-guides","Family Guides"],["/resources/family-guides/what-is-an-rcfe","What Is an RCFE? A Simple Guide for California Families"],["/why-us","Care That Feels Personal"],["/what-to-expect","What to Expect"]]) {
+    await page.goto(route);
+    await expect(page.locator("main h1")).toHaveText(title);
+  }
   expect(errors).toEqual([]);
 });

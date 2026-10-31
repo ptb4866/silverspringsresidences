@@ -68,25 +68,19 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <nav className="flex flex-col space-y-3">
               <Link
-                href="/assisted-living"
+                href="/care"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 Assisted Living
               </Link>
               <Link
-                href="/photo-gallery"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Photo Gallery
-              </Link>
-              <Link
-                href="/floor-plans"
+                href="/contact-us/locations#home-rooms"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 Floor Plans
               </Link>
               <Link
-                href="/services-and-amenities"
+                href="/care"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 Services & Amenities
